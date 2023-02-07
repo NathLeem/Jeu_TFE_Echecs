@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Jeu_TFE_Echecs.Pawns;
 
 namespace Jeu_TFE_Echecs
 {
@@ -117,18 +118,9 @@ namespace Jeu_TFE_Echecs
                 }
                 else
                 {
-
+                    button.Content = " ";
                 }
 
-                if (i < 8)
-                {
-                    i++;
-                }
-                else
-                {
-                    i = 0;
-                    j++;
-                }
             }
         }
 
@@ -205,7 +197,7 @@ namespace Jeu_TFE_Echecs
             if (click == 0)
             {
                 SplitName(((Button)sender).Name, ref nLigne, ref nColonne, click);
-                if (cases[nLigne[0], nColonne[0]].Content != "")
+                if (cases[nLigne[0], nColonne[0]].Content != " ")
                 {
                     click++;
                 }
@@ -216,7 +208,7 @@ namespace Jeu_TFE_Echecs
                 {
                     SplitName(((Button)sender).Name, ref nLigne, ref nColonne, click);
                     cases[nLigne[1], nColonne[1]].Content = cases[nLigne[0], nColonne[0]].Content;
-                    cases[nLigne[0], nColonne[0]].Content = "";
+                    cases[nLigne[0], nColonne[0]].Content = " ";
                 }
                 click = 0;
             }
