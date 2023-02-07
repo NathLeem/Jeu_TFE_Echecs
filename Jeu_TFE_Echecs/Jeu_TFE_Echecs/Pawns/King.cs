@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Jeu_TFE_Echecs
+namespace Jeu_TFE_Echecs.Pawns
 {
     class King : Piece
     {
