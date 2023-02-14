@@ -17,9 +17,17 @@ namespace Jeu_TFE_Echecs
     /// </summary>
     public partial class Menu : Window
     {
+        public Skins skins = new Skins();
         public Menu()
         {
             InitializeComponent();
+            skin.Click += new RoutedEventHandler(ChoixSkin);
+        }
+
+        public void ChoixSkin(object sender, RoutedEventArgs e)
+        {
+            skins.Show();
+            this.Hide();
         }
     }
 }
