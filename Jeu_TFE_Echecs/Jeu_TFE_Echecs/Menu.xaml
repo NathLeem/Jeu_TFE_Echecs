@@ -8,7 +8,8 @@
         Title="Menu" Height="450" Width="800" Background="#262421">
     <Grid x:Name="grdMenu">
         <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,1" FontSize="50" FontFamily="Arial" Foreground="Gray">Jeu d'échecs</TextBlock>
-        <Button Height="75" Width="150" Margin="0,0,600,350" FontSize="20" FontFamily="Arial" BorderThickness="5" BorderBrush="#312e2b" Foreground="#312e2b" Background="#07bc0c">Règles du jeu</Button>
-        <Button Height="100" Width="200" Margin="0,200,0,0" FontSize="50" FontFamily="Arial" BorderThickness="8" BorderBrush="#312e2b" Foreground="#312e2b" Background="#07bc0c">Jouer</Button>
+        <Button x:Name="play" Height="75" Width="150" Margin="0,0,600,350" FontSize="20" FontFamily="Arial" BorderThickness="5" BorderBrush="#312e2b" Foreground="#312e2b" Background="#07bc0c">Règles du jeu</Button>
+        <Button x:Name="rules" Height="100" Width="200" Margin="0,200,0,0" FontSize="50" FontFamily="Arial" BorderThickness="8" BorderBrush="#312e2b" Foreground="#312e2b" Background="#07bc0c">Jouer</Button>
+        <Button x:Name="skin" Height="100" Width="100" FontSize="30" FontFamily="Arial" BorderThickness="8" BorderBrush="#312e2b" Foreground="#312e2b" Background="#07bc0c" Margin="50,307,650,27">Skins</Button>
     </Grid>
 </Window>
