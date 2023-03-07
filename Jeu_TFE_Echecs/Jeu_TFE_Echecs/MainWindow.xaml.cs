@@ -189,7 +189,7 @@ namespace Jeu_TFE_Echecs
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
                 pp1[1] = i;
-                memPlate[6, i] = new Pawn(pp1, "black");
+                memPlate[6, i] = new Pawn(pp1, "black");    
             }
         }
         public void ShowCases(object sender, RoutedEventArgs e)
@@ -197,20 +197,25 @@ namespace Jeu_TFE_Echecs
             if (click == 0)
             {
                 SplitName(((Button)sender).Name, ref nLigne, ref nColonne, click);
-                if (cases[nLigne[0], nColonne[0]].Content != " ")
+                if (cases[nColonne[0], nLigne[0]].Content != " ")
                 {
                     click++;
                 }
             }
             else
             {
-                if (cases[nLigne[1], nColonne[1]].Content != cases[nLigne[0], nColonne[0]].Content)
-                {
-                    SplitName(((Button)sender).Name, ref nLigne, ref nColonne, click);
-                    cases[nLigne[1], nColonne[1]].Content = cases[nLigne[0], nColonne[0]].Content;
-                    cases[nLigne[0], nColonne[0]].Content = " ";
-                }
-                click = 0;
+                SplitName(((Button)sender).Name, ref nLigne, ref nColonne, click);
+                
+                if (nLigne[0] != nLigne[1] || nColonne[0] != nColonne[1])
+                {                 
+                    cases[nColonne[1], nLigne[1]].Content = cases[nColonne[0], nLigne[0]].Content;
+                    cases[nColonne[0], nLigne[0]].Content = " ";
+
+                    memPlate[nColonne[1], nLigne[1]] = memPlate[nColonne[0], nLigne[0]];
+                    //memPlate[nColonne[0], nLigne[0]] = ""; 
+
+                    click = 0;
+                }                
             }
 
             /*switch (cases[nLigne, nColonne].Name)
@@ -269,25 +274,10 @@ namespace Jeu_TFE_Echecs
         {
             string[] nom = nomCase.Split('_');
 
-            if (click != 0)
-            {
-                int nLigne1 = nLigne[0];
-                int nColonne1 = nColonne[0];
+            int.TryParse(nom[1], out nColonne[click]);
 
-                int.TryParse(nom[1], out nLigne[click]);
-
-                int.TryParse(nom[2], out nColonne[click]);
-
-                nLigne[0] = nLigne1;
-                nColonne[0] = nColonne1;
-            }
-            else
-            {
-                int.TryParse(nom[1], out nLigne[click]);
-
-                int.TryParse(nom[2], out nColonne[click]);
-            }
+            int.TryParse(nom[2], out nLigne[click]);
+            
         }
     }
-
 }
