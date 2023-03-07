@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace Jeu_TFE_Echecs
 {
     /// <summary>
@@ -18,16 +19,30 @@ namespace Jeu_TFE_Echecs
     public partial class Menu : Window
     {
         public Skins skins = new Skins();
+        MainWindow jeu = new MainWindow();
         public Menu()
         {
             InitializeComponent();
             skin.Click += new RoutedEventHandler(ChoixSkin);
+            play.Click += new RoutedEventHandler(LancerPartie);
+            rules.Click += new RoutedEventHandler(MontrerLesRegles);
         }
 
         public void ChoixSkin(object sender, RoutedEventArgs e)
         {
             skins.Show();
             this.Hide();
+        }
+
+        public void LancerPartie(object sender, RoutedEventArgs e)
+        {
+            jeu.Show();
+            play.IsEnabled = false;
+        }
+
+        public void MontrerLesRegles(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1edp2i_J69oaBG8ugUhrnC40m1QtkLCYcaHbLlRwIH1w");      
         }
     }
 }
