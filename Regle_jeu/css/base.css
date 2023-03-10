@@ -1,0 +1,10 @@
+body{
+    background-color: azure;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.Title{
+    justify-content: center;
+}
