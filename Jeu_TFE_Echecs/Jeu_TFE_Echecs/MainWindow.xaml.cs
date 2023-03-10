@@ -104,9 +104,6 @@ namespace Jeu_TFE_Echecs
                 "♖","♘","♗","♕","♔","♗","♘","♖"
             };
 
-            int j = 0;
-            int i = 0;
-
             foreach (Button button in grdPlate.Children.OfType<Button>())
             {
                 if (button.Content == "?")
@@ -127,69 +124,69 @@ namespace Jeu_TFE_Echecs
         public void SetUpMem()
         {
             int[] pt1 = new int[2] { 0, 0 };
-            memPlate[0, 0] = new Tower(pt1, "black");
+            memPlate[0, 0] = new Tower(pt1, "black", "tower");
 
             int[] pt2 = new int[2] { 0, 7 };
-            memPlate[0, 7] = new Tower(pt1, "black");
+            memPlate[0, 7] = new Tower(pt1, "black", "tower");
 
             int[] pt3 = new int[2] { 7, 0 };
-            memPlate[7, 0] = new Tower(pt1, "white");
+            memPlate[7, 0] = new Tower(pt1, "white", "tower");
 
             int[] pt4 = new int[2] { 7, 7 };
-            memPlate[0, 7] = new Tower(pt1, "white");
+            memPlate[7, 7] = new Tower(pt1, "white", "tower");
 
 
             int[] ph1 = new int[2] { 0, 1 };
-            memPlate[0, 1] = new Horse(ph1, "black");
+            memPlate[0, 1] = new Horse(ph1, "black", "horse");
 
             int[] ph2 = new int[2] { 0, 6 };
-            memPlate[0, 6] = new Horse(ph1, "black");
+            memPlate[0, 6] = new Horse(ph1, "black", "horse");
 
             int[] ph3 = new int[2] { 7, 1 };
-            memPlate[0, 1] = new Horse(ph1, "white");
+            memPlate[7, 1] = new Horse(ph1, "white", "horse");
 
             int[] ph4 = new int[2] { 7, 6 };
-            memPlate[0, 1] = new Horse(ph1, "white");
+            memPlate[7, 6] = new Horse(ph1, "white", "horse");
 
 
             int[] pb1 = new int[2] { 0, 2 };
-            memPlate[0, 2] = new Bishop(pb1, "black");
+            memPlate[0, 2] = new Bishop(pb1, "black", "bishop");
 
             int[] pb2 = new int[2] { 0, 5 };
-            memPlate[0, 5] = new Bishop(pb1, "black");
+            memPlate[0, 5] = new Bishop(pb1, "black", "bishop");
 
             int[] pb3 = new int[2] { 7, 2 };
-            memPlate[7, 2] = new Bishop(pb1, "white");
+            memPlate[7, 2] = new Bishop(pb1, "white", "bishop");
 
             int[] pb4 = new int[2] { 7, 5 };
-            memPlate[7, 5] = new Bishop(pb1, "white");
+            memPlate[7, 5] = new Bishop(pb1, "white", "bishop");
 
 
             int[] pq1 = new int[2] { 0, 3 };
-            memPlate[0, 3] = new Queen(pq1, "black");
+            memPlate[0, 3] = new Queen(pq1, "black", "queen");
 
             int[] pq2 = new int[2] { 7, 3 };
-            memPlate[7, 3] = new Queen(pq1, "white");
+            memPlate[7, 3] = new Queen(pq1, "white", "queen");
 
 
             int[] pk1 = new int[2] { 0, 4 };
-            memPlate[0, 4] = new King(pk1, "black");
+            memPlate[0, 4] = new King(pk1, "black", "king");
 
             int[] pk2 = new int[2] { 7, 4 };
-            memPlate[7, 4] = new King(pk1, "white");
+            memPlate[7, 4] = new King(pk1, "white", "king");
 
             int[] pp1 = new int[2] { 1, 0 };
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
                 pp1[1] = i;
-                memPlate[1, i] = new Pawn(pp1, "black");
+                memPlate[1, i] = new Pawn(pp1, "black", "pawn");
             }
 
             int[] pp2 = new int[2] { 6, 0 };
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
                 pp1[1] = i;
-                memPlate[6, i] = new Pawn(pp1, "black");    
+                memPlate[6, i] = new Pawn(pp1, "black", "pawn");    
             }
         }
         public void ShowCases(object sender, RoutedEventArgs e)
@@ -208,66 +205,28 @@ namespace Jeu_TFE_Echecs
                 
                 if (nLigne[0] != nLigne[1] || nColonne[0] != nColonne[1])
                 {                 
-                    cases[nColonne[1], nLigne[1]].Content = cases[nColonne[0], nLigne[0]].Content;
-                    cases[nColonne[0], nLigne[0]].Content = " ";
+                    if(AcceptMove(nColonne, nLigne))
+                    {
+                        cases[nColonne[1], nLigne[1]].Content = cases[nColonne[0], nLigne[0]].Content;
+                        cases[nColonne[0], nLigne[0]].Content = " ";
 
-                    memPlate[nColonne[1], nLigne[1]] = memPlate[nColonne[0], nLigne[0]];
-                    //memPlate[nColonne[0], nLigne[0]] = ""; 
+                        memPlate[nColonne[1], nLigne[1]] = memPlate[nColonne[0], nLigne[0]];
+                        memPlate[nColonne[0], nLigne[0]] = null;
 
-                    click = 0;
-                }                
+                        
+                    }
+                    
+                }
+                click = 0;
             }
 
-            /*switch (cases[nLigne, nColonne].Name)
-            {
-                case "♟":
+        }
 
-                    break;
+        public bool AcceptMove(int[] nColonne, int[] nLigne)
+        {
+            bool moveAccept = memPlate[nColonne[0], nLigne[0]].Moving(nColonne, nLigne, memPlate);
 
-                case "♜":
-
-                    break;
-
-                case "♞":
-
-                    break;
-
-                case "♝":
-
-                    break;
-
-                case "♛":
-
-                    break;
-
-                case "♚":
-
-                    break;
-
-                case "♙":
-
-                    break;
-
-                case "♖":
-
-                    break;
-
-                case "♘":
-
-                    break;
-
-                case "♗":
-
-                    break;
-
-                case "♕":
-
-                    break;
-
-                case "♔":
-
-                    break;
-            }*/
+            return moveAccept;
         }
 
         public void SplitName(string nomCase, ref int[] nLigne, ref int[] nColonne, int click)

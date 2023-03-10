@@ -4,18 +4,29 @@ using System.Text;
 
 namespace Jeu_TFE_Echecs
 {
-    class Piece
+    abstract class Piece
     {
-        protected bool _dead;
         protected int[] _position = new int[2];
         protected string _color;
+        protected string _typePiece;
         private List<string> _moves = new List<string>();
 
-        public Piece(int[] position, string color)
+        public Piece(int[] position, string color, string typePiece)
         {
-            _dead = false;
             this._position = position;
             this._color = color;
+            this._typePiece = typePiece;
+        }
+
+        public abstract bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate);
+
+        public string TypePiece
+        {
+            get { return _typePiece; }
+        }
+        public string Color
+        {
+            get { return _color; }
         }
     }
 }
