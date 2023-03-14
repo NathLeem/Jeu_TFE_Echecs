@@ -186,7 +186,7 @@ namespace Jeu_TFE_Echecs
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
                 pp1[1] = i;
-                memPlate[6, i] = new Pawn(pp1, "black", "pawn");    
+                memPlate[6, i] = new Pawn(pp1, "white", "pawn");    
             }
         }
         public void ShowCases(object sender, RoutedEventArgs e)
@@ -213,7 +213,6 @@ namespace Jeu_TFE_Echecs
                         memPlate[nColonne[1], nLigne[1]] = memPlate[nColonne[0], nLigne[0]];
                         memPlate[nColonne[0], nLigne[0]] = null;
 
-                        
                     }
                     
                 }
@@ -221,7 +220,6 @@ namespace Jeu_TFE_Echecs
             }
 
         }
-
         public bool AcceptMove(int[] nColonne, int[] nLigne)
         {
             bool moveAccept = memPlate[nColonne[0], nLigne[0]].Moving(nColonne, nLigne, memPlate);
