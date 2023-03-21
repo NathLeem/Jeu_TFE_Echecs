@@ -1,10 +1,17 @@
-body{
+*{
     background-color: azure;
     font-family: 'Tilt Neon', cursive;
 }
 a{
     text-decoration: none;
     color: black;
+    padding: auto;
+}
+a:hover{
+    transform: rotateX('180');
+}
+h1{
+    text-align: center;
 }
 .Title{
     justify-content: center;
@@ -12,4 +19,8 @@ a{
 .container{
     display: flex;
     justify-content: space-evenly;
+}
+.ImageAccueil{
+    max-width: 30%;
+    height: auto;
 }

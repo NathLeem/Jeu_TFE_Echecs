@@ -3,7 +3,7 @@
     require_once 'element/header.php';
 
     $uri = $_SERVER['REQUEST_URI'];
-    if($uri === '/Regle_jeu/index.php'){
+    if($uri === '/index.php'){
         require_once 'view/reception.php';
     }
     elseif($uri === 'Regle_jeu/index.php?/views/pawn.php'){

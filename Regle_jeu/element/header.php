@@ -8,30 +8,27 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/base.css">
-        <title>Document</title>
+        <title>Jeu d'échecs</title>
     </head>
     <body>
         <div class="container">
-                <div class="Pawn">
-                    <a href="view/pawn.php">Pawn</a>
+                    <a href="/index.php"><img class="ImageAccueil" src="picture/echecs.jpg" alt="pièce"></a>
+                    <div class="Pawn">
+                        <a href="/index.php?/views/pawn.php">Pawn</a>
+                    </div>
+                    <div class="Pawn">
+                        <a href="/index.php?/views/king.php">King</a>
+                    </div>
+                    <div class="Pawn">
+                        <a href="/index.php?/views/queen.php">Queen</a>
+                    </div>
+                    <div class="Pawn">
+                        <a href="/index.php?/views/tower.php">Tower</a>
+                    </div>
+                    <div class="Pawn">
+                        <a href="/index.php?/views/horse.php">Horse</a>
+                    </div>
+                    <div class="Pawn">
+                        <a href="/index.php?/views/bishop.php">Bishop</a>
+                    </div>
                 </div>
-                <div class="King">
-                    <a href="view/king.php">King</a>
-                </div>
-                <div class="Queen">
-                    <a href="view/queen.php">Queen</a>
-                </div>
-                <div class="Tower">
-                    <a href="view/tower.php">Tower</a>
-                </div>
-                <div class="Horse">
-                    <a href="view/horse.php">Horse</a>
-                </div>
-                <div class="Bishop">
-                    <a href="view/bishop.php">Bishop</a>
-                </div>
-            </div>
-            <div class="Title">
-                <i class="fa-solid fa-chess"></i>
-                <h1>Jeu d'échecs</h1>
-            </div>
