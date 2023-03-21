@@ -5,7 +5,7 @@
         </div>
         <div class="footerblock">
             <td>
-                <a href="https://twitter.com/">
+                <a href="https://twitter.com/chesscom">
                     <img src="picture/icon1.jpg" alt="twitter">
                 </a>
             </td>
@@ -15,7 +15,7 @@
                 </a>
             </td>
             <td>
-                <a href="https://www.google.be/?hl=fr">
+                <a href="https://www.chess.com/fr">
                     <img src="picture/icon3.jpg" alt="google">
                 </a>
             </td>
