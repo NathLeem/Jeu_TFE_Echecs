@@ -9,7 +9,7 @@ namespace Jeu_TFE_Echecs.Pawns
         private bool _check;
         private bool _checkMate;
 
-        public King(int[] position, string color, string typePiece) : base(position, color, typePiece)
+        public King(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
         {
             _check = false;
             _checkMate = false;

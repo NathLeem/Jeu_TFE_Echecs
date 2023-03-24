@@ -6,7 +6,7 @@ namespace Jeu_TFE_Echecs.Pawns
 {
     class Tower : Piece
     {
-        public Tower(int[] position, string color, string typePiece) : base(position, color, typePiece)
+        public Tower(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
         {
 
         }
@@ -36,60 +36,61 @@ namespace Jeu_TFE_Echecs.Pawns
                 {
                     movable = false;
                 }
-                /*else
+
+                if (nCSame)
                 {
-                    if (nCSame)
+                    if(nLigne[0] > nLigne[1])
                     {
-                        if (nLigne[0] < nLigne[1])
+                        for (int i = nLigne[0] - 1; i > nLigne[1]; i--)
                         {
-                            for (int i = nLigne[0]; i < nLigne[1]; i++)
+                            if(memPlate[nColonne[0], i] != null)
                             {
-                                if (memPlate[nColonne[0], nLigne[i]] != null)
-                                {
-                                    movable = false;
-                                }
+                                movable = false;
+                            }
+                        }                     
+                    }
+                    else
+                    {
+                        for (int i = nLigne[0] + 1; i < nLigne[1]; i++)
+                        {
+                            if (memPlate[nColonne[0], i] != null)
+                            {
+                                movable = false;
                             }
                         }
-                        else
+                    }
+                }
+                else
+                {
+                    if (nColonne[0] > nColonne[1])
+                    {
+                        for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
                         {
-                            for (int i = nLigne[1]; i > nLigne[0]; i--)
+                            if (memPlate[i, nLigne[0]] != null)
                             {
-                                if (memPlate[nColonne[0], nLigne[i]] != null)
-                                {
-                                    movable = false;
-                                }
+                                movable = false;
                             }
                         }
                     }
                     else
                     {
-                        if (nColonne[0] < nColonne[1])
+                        for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
                         {
-                            for (int i = nColonne[0]; i < nColonne[1]; i++)
+                            if (memPlate[i, nLigne[0]] != null)
                             {
-                                if (memPlate[nColonne[i], nLigne[0]] != null)
-                                {
-                                    movable = false;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            for (int i = nColonne[1]; i > nColonne[0]; i--)
-                            {
-                                if (memPlate[nColonne[i], nLigne[0]] != null)
-                                {
-                                    movable = false;
-                                }
+                                movable = false;
                             }
                         }
                     }
                 }
 
-                if (memPlate[nColonne[1], nLigne[1]].Color == this.Color)
+                if(memPlate[nColonne[1], nLigne[1]] != null)
                 {
-                    movable = false;
-                }*/
+                    if(memPlate[nColonne[0], nLigne[0]].Color == memPlate[nColonne[1], nLigne[1]].Color)
+                    {
+                        movable = false;
+                    }
+                }
             }
 
             return movable;

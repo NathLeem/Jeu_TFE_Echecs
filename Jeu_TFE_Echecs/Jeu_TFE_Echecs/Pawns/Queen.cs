@@ -6,7 +6,7 @@ namespace Jeu_TFE_Echecs.Pawns
 {
     class Queen : Piece
     {
-        public Queen(int[] position, string color, string typePiece) : base(position, color, typePiece)
+        public Queen(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
         {
 
         }

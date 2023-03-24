@@ -6,7 +6,7 @@ namespace Jeu_TFE_Echecs.Pawns
 {
     class Horse : Piece 
     {
-        public Horse(int[] position, string color, string typePiece) : base(position, color, typePiece)
+        public Horse(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
         {
 
         }
@@ -14,6 +14,14 @@ namespace Jeu_TFE_Echecs.Pawns
         public override bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate)
         {
             bool movable = false;
+
+            int deltaColonne = Math.Abs(nColonne[0] - nColonne[1]);
+            int deltaLigne = Math.Abs(nLigne[0] - nLigne[1]);
+
+            if ((deltaLigne == 2 && deltaColonne == 1) || (deltaLigne == 1 && deltaColonne == 2))
+            {
+                movable = true;
+            }
 
             return movable;
         }

@@ -9,7 +9,7 @@ namespace Jeu_TFE_Echecs.Pawns
         private bool _passant;
         private bool _notMove;
 
-        public Pawn(int[] position, string color, string typePiece) : base(position, color, typePiece)
+        public Pawn(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
         {
             this._passant = false;
             this._notMove = true;

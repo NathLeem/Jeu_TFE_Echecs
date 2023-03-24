@@ -22,7 +22,9 @@ namespace Jeu_TFE_Echecs
     public partial class MainWindow : Window
     {
         Button[,] cases = new Button[8, 8];
+        
         Piece[,] memPlate = new Piece[8, 8];
+        Piece[] pieces = new Piece[32];
 
         int click = 0;
 
@@ -123,71 +125,71 @@ namespace Jeu_TFE_Echecs
 
         public void SetUpMem()
         {
-            int[] pt1 = new int[2] { 0, 0 };
-            memPlate[0, 0] = new Tower(pt1, "black", "tower");
+            pieces[0] = new Tower(new int[2] { 0, 0 }, "black", "tower", 0);
+            memPlate[0, 0] = pieces[0];
 
-            int[] pt2 = new int[2] { 0, 7 };
-            memPlate[0, 7] = new Tower(pt1, "black", "tower");
+            pieces[1] = new Tower(new int[2] { 0, 7 }, "black", "tower", 1);
+            memPlate[0, 7] = pieces[1];
 
-            int[] pt3 = new int[2] { 7, 0 };
-            memPlate[7, 0] = new Tower(pt1, "white", "tower");
+            pieces[2] = new Tower(new int[2] { 7, 0 }, "white", "tower", 2);
+            memPlate[7, 0] = pieces[2];
 
-            int[] pt4 = new int[2] { 7, 7 };
-            memPlate[7, 7] = new Tower(pt1, "white", "tower");
-
-
-            int[] ph1 = new int[2] { 0, 1 };
-            memPlate[0, 1] = new Horse(ph1, "black", "horse");
-
-            int[] ph2 = new int[2] { 0, 6 };
-            memPlate[0, 6] = new Horse(ph1, "black", "horse");
-
-            int[] ph3 = new int[2] { 7, 1 };
-            memPlate[7, 1] = new Horse(ph1, "white", "horse");
-
-            int[] ph4 = new int[2] { 7, 6 };
-            memPlate[7, 6] = new Horse(ph1, "white", "horse");
+            pieces[3] = new Tower(new int[2] { 7, 7 }, "white", "tower", 3);
+            memPlate[7, 7] = pieces[3];
 
 
-            int[] pb1 = new int[2] { 0, 2 };
-            memPlate[0, 2] = new Bishop(pb1, "black", "bishop");
+            pieces[4] = new Horse(new int[2] { 0, 1 }, "black", "horse", 4);
+            memPlate[0, 1] = pieces[4];
 
-            int[] pb2 = new int[2] { 0, 5 };
-            memPlate[0, 5] = new Bishop(pb1, "black", "bishop");
+            pieces[5] = new Horse(new int[2] { 0, 6 }, "black", "horse", 5);
+            memPlate[0, 6] = pieces[5];
 
-            int[] pb3 = new int[2] { 7, 2 };
-            memPlate[7, 2] = new Bishop(pb1, "white", "bishop");
+            pieces[6] = new Horse(new int[2] { 7, 1 }, "white", "horse", 6);
+            memPlate[7, 1] = pieces[6];
 
-            int[] pb4 = new int[2] { 7, 5 };
-            memPlate[7, 5] = new Bishop(pb1, "white", "bishop");
-
-
-            int[] pq1 = new int[2] { 0, 3 };
-            memPlate[0, 3] = new Queen(pq1, "black", "queen");
-
-            int[] pq2 = new int[2] { 7, 3 };
-            memPlate[7, 3] = new Queen(pq1, "white", "queen");
+            pieces[7] = new Horse(new int[2] { 7, 6 }, "white", "horse", 7);
+            memPlate[7, 6] = pieces[7];
 
 
-            int[] pk1 = new int[2] { 0, 4 };
-            memPlate[0, 4] = new King(pk1, "black", "king");
+            pieces[8] = new Bishop(new int[2] { 0, 2 }, "black", "bishop", 8);
+            memPlate[0, 2] = pieces[8];
 
-            int[] pk2 = new int[2] { 7, 4 };
-            memPlate[7, 4] = new King(pk1, "white", "king");
+            pieces[9] = new Bishop(new int[2] { 0, 5 }, "black", "bishop", 9);
+            memPlate[0, 5] = pieces[9];
 
-            int[] pp1 = new int[2] { 1, 0 };
+            pieces[10] = new Bishop(new int[2] { 7, 2 }, "white", "bishop", 10);
+            memPlate[7, 2] = pieces[10];
+
+            pieces[11] = new Bishop(new int[2] { 7, 5 }, "white", "bishop", 11);
+            memPlate[7, 5] = pieces[11];
+
+
+            pieces[12] = new Queen(new int[2] { 0, 3 }, "black", "queen", 12);
+            memPlate[0, 3] = pieces[12];
+
+            pieces[13] = new Queen(new int[2] { 7, 3 }, "white", "queen", 13);
+            memPlate[7, 3] = pieces[13];
+
+
+            pieces[14] = new King(new int[2] { 0, 4 }, "black", "king", 14);
+            memPlate[0, 4] = pieces[14];
+
+            pieces[15] = new King(new int[2] { 7, 4 }, "white", "king", 15);
+            memPlate[7, 4] = pieces[15];
+
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
-                pp1[1] = i;
-                memPlate[1, i] = new Pawn(pp1, "black", "pawn");
+                pieces[16 + i] = new Pawn(new int[2] { 1, 0 }, "black", "pawn", (sbyte)(16 + i));
+                memPlate[1, i] = pieces[16 + i];
             }
 
             int[] pp2 = new int[2] { 6, 0 };
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
-                pp1[1] = i;
-                memPlate[6, i] = new Pawn(pp1, "white", "pawn");    
+                pieces[24 + i] = new Pawn(new int[2] { 6, 0 }, "white", "pawn", (sbyte)(24 + i));
+                memPlate[6, i] = pieces[24 + i];
             }
+
         }
         public void ShowCases(object sender, RoutedEventArgs e)
         {
