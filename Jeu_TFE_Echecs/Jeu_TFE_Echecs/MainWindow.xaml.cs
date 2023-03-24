@@ -26,6 +26,8 @@ namespace Jeu_TFE_Echecs
         Piece[,] memPlate = new Piece[8, 8];
         Piece[] pieces = new Piece[32];
 
+        SolidColorBrush lastColor;
+
         int click = 0;
 
         public int[] nLigne = new int[2];
@@ -41,7 +43,7 @@ namespace Jeu_TFE_Echecs
             {
                 for (int j = 0; j < cases.GetLength(1); j++)
                 {
-                    cases[i, j].Click += new RoutedEventHandler(ShowCases);
+                    cases[i, j].Click += new RoutedEventHandler(Play);
                 }
             }
         }
@@ -191,7 +193,7 @@ namespace Jeu_TFE_Echecs
             }
 
         }
-        public void ShowCases(object sender, RoutedEventArgs e)
+        public void Play(object sender, RoutedEventArgs e)
         {
             if (click == 0)
             {
@@ -199,6 +201,9 @@ namespace Jeu_TFE_Echecs
                 if (cases[nColonne[0], nLigne[0]].Content != " ")
                 {
                     click++;
+
+                    lastColor = (SolidColorBrush)cases[nColonne[0], nLigne[0]].Background;
+                    cases[nColonne[0], nLigne[0]].Background = Brushes.Yellow;
                 }
             }
             else
@@ -219,6 +224,8 @@ namespace Jeu_TFE_Echecs
                     
                 }
                 click = 0;
+
+                cases[nColonne[0], nLigne[0]].Background = lastColor;
             }
 
         }
