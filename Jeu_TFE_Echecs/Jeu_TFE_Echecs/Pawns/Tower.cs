@@ -6,9 +6,10 @@ namespace Jeu_TFE_Echecs.Pawns
 {
     class Tower : Piece
     {
+        private bool _roc;
         public Tower(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
         {
-
+            _roc = true;
         }
 
         public override bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate)
@@ -93,6 +94,8 @@ namespace Jeu_TFE_Echecs.Pawns
                 }
             }
 
+            _roc = false;
+            
             return movable;
         }
     }
