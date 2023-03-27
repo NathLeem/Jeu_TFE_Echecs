@@ -42,7 +42,7 @@ namespace Jeu_TFE_Echecs
 
         public void MontrerLesRegles(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1edp2i_J69oaBG8ugUhrnC40m1QtkLCYcaHbLlRwIH1w");      
+            System.Diagnostics.Process.Start("Regles.docx");      
         }
     }
 }

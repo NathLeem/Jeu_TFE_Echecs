@@ -8,23 +8,24 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Gabriel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\Desktop\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
       "projectName": "Jeu_TFE_Echecs",
-      "projectPath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
-      "packagesPath": "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\",
-      "outputPath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\",
+      "projectPath": "C:\\Users\\Gabriel\\Desktop\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
+      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabriel\\Desktop\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\200198.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -55,7 +57,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -67,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

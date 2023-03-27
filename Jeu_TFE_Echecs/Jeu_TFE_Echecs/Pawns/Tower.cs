@@ -33,11 +33,6 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 movable = true;
 
-                if (nCSame && nLSame)
-                {
-                    movable = false;
-                }
-
                 if (nCSame)
                 {
                     if(nLigne[0] > nLigne[1])

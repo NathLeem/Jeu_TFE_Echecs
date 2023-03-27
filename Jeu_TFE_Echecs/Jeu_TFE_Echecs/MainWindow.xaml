@@ -6,7 +6,35 @@
         xmlns:local="clr-namespace:Jeu_TFE_Echecs"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="grdPlate">
+    <Grid x:Name="game">
+        <Grid Grid.Row="0" x:Name="informations" Background="DarkCyan">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">C'est au tour des</TextBlock>
+            <TextBlock x:Name="joueur" Grid.Column="1" Background="White"/>
+
+            <StackPanel Grid.Column="2" >
+                <TextBlock FontSize="10">Pions prit par les noirs :</TextBlock>
+                <TextBlock x:Name="prisesNoirs"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" >
+                <TextBlock FontSize="10">Pions prit par les blancs :</TextBlock>
+                <TextBlock x:Name="prisesBlanches"></TextBlock>
+            </StackPanel>
+
+
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
 
     </Grid>
 </Window>

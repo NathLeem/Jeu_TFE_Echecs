@@ -21,6 +21,7 @@ namespace Jeu_TFE_Echecs
     /// </summary>
     public partial class MainWindow : Window
     {
+        Grid grdPlate = new Grid();
         Button[,] cases = new Button[8, 8];
         
         Piece[,] memPlate = new Piece[8, 8];
@@ -29,13 +30,14 @@ namespace Jeu_TFE_Echecs
         SolidColorBrush lastColor;
 
         int click = 0;
+        string turn = "white";
 
         public int[] nLigne = new int[2];
         public int[] nColonne = new int[2];
         public MainWindow()
         {
-            InitializeComponent();
-            Interface();
+            InitializeComponent();            
+            SetUpPlate();            
             SetUpGame();
             SetUpMem();
 
@@ -47,8 +49,9 @@ namespace Jeu_TFE_Echecs
                 }
             }
         }
-        public void Interface()
+        public void SetUpPlate()
         {
+        
             // Création des colonnes et des lignes
             for (int i = 0; i < 8; i++)
             {
@@ -96,7 +99,8 @@ namespace Jeu_TFE_Echecs
                 }
             }
 
-
+            Grid.SetRow(grdPlate, 1);
+            game.Children.Add(grdPlate);          
         }
         public void SetUpGame()
         {
@@ -122,6 +126,18 @@ namespace Jeu_TFE_Echecs
                     button.Content = " ";
                 }
 
+            }
+        }
+
+        public void RefreshInfos()
+        {
+            if(turn == "white")
+            {
+                joueur.Background = Brushes.White;
+            }
+            else
+            {
+                joueur.Background = Brushes.Black;
             }
         }
 
@@ -195,15 +211,19 @@ namespace Jeu_TFE_Echecs
         }
         public void Play(object sender, RoutedEventArgs e)
         {
+            
             if (click == 0)
             {
                 SplitName(((Button)sender).Name, ref nLigne, ref nColonne, click);
                 if (cases[nColonne[0], nLigne[0]].Content != " ")
                 {
-                    click++;
+                    if (memPlate[nColonne[0], nLigne[0]].Color == turn)
+                    {
+                        lastColor = (SolidColorBrush)cases[nColonne[0], nLigne[0]].Background;
+                        cases[nColonne[0], nLigne[0]].Background = Brushes.Yellow;
 
-                    lastColor = (SolidColorBrush)cases[nColonne[0], nLigne[0]].Background;
-                    cases[nColonne[0], nLigne[0]].Background = Brushes.Yellow;
+                        click++;
+                    }                         
                 }
             }
             else
@@ -220,14 +240,24 @@ namespace Jeu_TFE_Echecs
                         memPlate[nColonne[1], nLigne[1]] = memPlate[nColonne[0], nLigne[0]];
                         memPlate[nColonne[0], nLigne[0]] = null;
 
+                        if (turn == "white")
+                        {
+                            turn = "black";
+                        }
+                        else
+                        {
+                            turn = "white";
+                        }
                     }
                     
                 }
                 click = 0;
 
                 cases[nColonne[0], nLigne[0]].Background = lastColor;
+            
+                RefreshInfos();
             }
-
+            
         }
         public bool AcceptMove(int[] nColonne, int[] nLigne)
         {
