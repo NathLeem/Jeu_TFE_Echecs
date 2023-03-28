@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Jeu_TFE_Echecs.Pawns;
 
 namespace Jeu_TFE_Echecs
@@ -34,6 +35,13 @@ namespace Jeu_TFE_Echecs
 
         public int[] nLigne = new int[2];
         public int[] nColonne = new int[2];
+
+        /*DispatcherTimer timerWhite = new DispatcherTimer();
+        DispatcherTimer timerBlack = new DispatcherTimer();
+
+        int timeWhite = 0;
+        int timeBlack = 0;*/
+
         public MainWindow()
         {
             InitializeComponent();            
@@ -48,6 +56,8 @@ namespace Jeu_TFE_Echecs
                     cases[i, j].Click += new RoutedEventHandler(Play);
                 }
             }
+
+            
         }
         public void SetUpPlate()
         {
@@ -127,6 +137,10 @@ namespace Jeu_TFE_Echecs
                 }
 
             }
+
+            /*timerWhite.Tick += new EventHandler(Timer_Tick);
+            timerWhite.Interval = (TimeSpan)1000;
+            timerWhite.Start();*/
         }
 
         public void RefreshInfos()
@@ -275,5 +289,15 @@ namespace Jeu_TFE_Echecs
             int.TryParse(nom[2], out nLigne[click]);
             
         }
+
+        /*public void Timer_Tick(object sender, EventArgs e)
+        {
+            
+            if(turn == "white")
+            {
+                timeWhite++;
+                afficheTime.Text = (timeWhite).ToString("0.0s");
+            }
+        }*/
     }
 }
