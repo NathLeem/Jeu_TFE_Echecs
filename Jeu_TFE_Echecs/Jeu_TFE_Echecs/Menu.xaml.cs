@@ -31,7 +31,6 @@ namespace Jeu_TFE_Echecs
         public void ChoixSkin(object sender, RoutedEventArgs e)
         {
             skins.Show();
-            this.Hide();
         }
 
         public void LancerPartie(object sender, RoutedEventArgs e)

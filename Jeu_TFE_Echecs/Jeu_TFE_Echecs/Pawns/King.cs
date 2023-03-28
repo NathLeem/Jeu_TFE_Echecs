@@ -25,9 +25,14 @@ namespace Jeu_TFE_Echecs.Pawns
 
             if (sommeDelta <= 2 && deltaLigne != 2 && deltaColonne != 2)
             {
-                movable = true;
+                if(memPlate[nColonne[1], nLigne[1]] != null)
+                {
+                    if (memPlate[nColonne[0], nLigne[0]].Color != memPlate[nColonne[1], nLigne[1]].Color)
+                    {
+                        movable = true;
+                    }
+                }             
             }
-
             return movable;
         }
     }

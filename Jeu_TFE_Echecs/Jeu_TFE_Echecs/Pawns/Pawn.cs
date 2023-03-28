@@ -19,22 +19,45 @@ namespace Jeu_TFE_Echecs.Pawns
             bool movable = false;
 
             int deltaColonne = nColonne[0] - nColonne[1];
-
-            if(Color == "black")
+            int deltaLigne = nLigne[0] - nLigne[1];
+         
+            if (Color == "black")
             {
                 if (_notMove)
                 {
                     if (deltaColonne == -2 || deltaColonne == -1 && nLigne[0] == nLigne[1])
                     {
-                        movable = true;
+                        if (deltaColonne == -2)
+                        {
+                            if (memPlate[2, nLigne[0]] == null)
+                            {
+                                movable = true;
+                            }
+                        }
                         _notMove = false;
                     }
                 }
                 else
                 {
-                    if (deltaColonne == -1 && nLigne[0] == nLigne[1])
+                    if ((deltaColonne == -1 && nLigne[0] == nLigne[1]) || (Math.Abs(deltaLigne) == 1 && deltaColonne == -1))
                     {
-                        movable = true;
+                        if (Math.Abs(deltaLigne) == 1 && deltaColonne == -1)
+                        {
+                            if (memPlate[nColonne[1], nLigne[1]] != null)
+                            {
+                                if (memPlate[nColonne[0], nLigne[0]].Color != memPlate[nColonne[1], nLigne[1]].Color)
+                                {
+                                    movable = true;
+                                }
+                            }
+                        }
+                        else if (deltaColonne == -1 && nLigne[0] == nLigne[1])
+                        {
+                            if (memPlate[nColonne[1], nLigne[1]] == null)
+                            {
+                                movable = true;
+                            }
+                        }
                     }
                 }
             }
@@ -42,22 +65,54 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 if (_notMove)
                 {
-                    if (deltaColonne == 2 || deltaColonne == 1 && nLigne[0] == nLigne[1])
+                    if ((deltaColonne == 2 || deltaColonne == 1) && nLigne[0] == nLigne[1])
                     {
-                        movable = true;
+                        if (deltaColonne == 2)
+                        {
+                            if (memPlate[5, nLigne[0]] == null)
+                            {
+                                movable = true;
+                            }
+                        }
+
                         _notMove = false;
                     }
                 }
                 else
                 {
-                    if (deltaColonne == 1 && nLigne[0] == nLigne[1])
+                    if ((deltaColonne == 1 && nLigne[0] == nLigne[1]) || (Math.Abs(deltaLigne) == 1 && deltaColonne == 1))
                     {
-                        movable = true;
+                        if(Math.Abs(deltaLigne) == 1 && deltaColonne == 1)
+                        {
+                            if (memPlate[nColonne[1], nLigne[1]] != null)
+                            {
+                                if (memPlate[nColonne[0], nLigne[0]].Color != memPlate[nColonne[1], nLigne[1]].Color)
+                                {
+                                    movable = true;
+                                }
+                            }
+                        }                   
+                        else if(deltaColonne == 1 && nLigne[0] == nLigne[1])
+                        {
+                            if(memPlate[nColonne[1], nLigne[1]] == null)
+                            {
+                                movable = true;
+                            }                          
+                        }
+                        
                     }
                 }
             }
-              
+
+            if (memPlate[nColonne[1], nLigne[1]] != null)
+            {
+                if (memPlate[nColonne[0], nLigne[0]].Color == memPlate[nColonne[1], nLigne[1]].Color)
+                {
+                    movable = false;
+                }
+            }
             return movable;
         }
+
     }
 }

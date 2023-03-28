@@ -20,6 +20,10 @@ namespace Jeu_TFE_Echecs.Pawns
 
             if (deltaLigne == deltaColonne)
             {
+                if(deltaColonne < 0 && deltaLigne < 0)
+                {
+
+                }
                 movable = true;
             }
 
