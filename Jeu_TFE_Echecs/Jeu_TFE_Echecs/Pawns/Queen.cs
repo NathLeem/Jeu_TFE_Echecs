@@ -30,62 +30,136 @@ namespace Jeu_TFE_Echecs.Pawns
 
             if (nCSame || nLSame)
             {
-                movable = true;
+                movable = StraightMoving(nColonne, nLigne, memPlate, nCSame, nLSame);
+            }
+            else
+            {
+                int deltaLigne = nLigne[0] - nLigne[1];
+                int deltaColonne = nColonne[0] - nColonne[1];
 
-                if (nCSame)
+                if (Math.Abs(deltaLigne) == Math.Abs(deltaColonne))
                 {
-                    if (nLigne[0] > nLigne[1])
+                    movable = DiagonalMoving(nColonne, nLigne, memPlate, deltaLigne, deltaColonne);
+                }
+            }
+
+            if (memPlate[nColonne[1], nLigne[1]] != null)
+            {
+                if (memPlate[nColonne[0], nLigne[0]].Color == memPlate[nColonne[1], nLigne[1]].Color)
+                {
+                    movable = false;
+                }
+            }
+
+            return movable;
+        }
+
+        private bool StraightMoving(int[] nColonne, int[] nLigne, Piece[,] memPlate, bool nCSame, bool nLSame)
+        {
+            bool movable = true;
+
+            if (nCSame)
+            {
+                if (nLigne[0] > nLigne[1])
+                {
+                    for (int i = nLigne[0] - 1; i > nLigne[1]; i--)
                     {
-                        for (int i = nLigne[0] - 1; i > nLigne[1]; i--)
+                        if (memPlate[nColonne[0], i] != null)
                         {
-                            if (memPlate[nColonne[0], i] != null)
-                            {
-                                movable = false;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        for (int i = nLigne[0] + 1; i < nLigne[1]; i++)
-                        {
-                            if (memPlate[nColonne[0], i] != null)
-                            {
-                                movable = false;
-                            }
+                            movable = false;
                         }
                     }
                 }
                 else
                 {
-                    if (nColonne[0] > nColonne[1])
+                    for (int i = nLigne[0] + 1; i < nLigne[1]; i++)
                     {
-                        for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
+                        if (memPlate[nColonne[0], i] != null)
                         {
-                            if (memPlate[i, nLigne[0]] != null)
-                            {
-                                movable = false;
-                            }
+                            movable = false;
                         }
                     }
-                    else
+                }
+            }
+            else
+            {
+                if (nColonne[0] > nColonne[1])
+                {
+                    for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
                     {
-                        for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                        if (memPlate[i, nLigne[0]] != null)
                         {
-                            if (memPlate[i, nLigne[0]] != null)
-                            {
-                                movable = false;
-                            }
+                            movable = false;
                         }
                     }
-                }               
+                }
+                else
+                {
+                    for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                    {
+                        if (memPlate[i, nLigne[0]] != null)
+                        {
+                            movable = false;
+                        }
+                    }
+                }
             }
 
-            int deltaLigne = Math.Abs(nLigne[0] - nLigne[1]);
-            int deltaColonne = Math.Abs(nColonne[0] - nColonne[1]);
+            return movable;
+        }
 
-            if (deltaLigne == deltaColonne)
+        private bool DiagonalMoving(int[] nColonne, int[] nLigne, Piece[,] memPlate, int deltaLigne, int deltaColonne)
+        {
+            bool movable = true;
+
+            int j;
+            if (deltaColonne > 0 && deltaLigne < 0) //Déplacement UR (Up-Right)
             {
-                movable = true;
+                j = nLigne[0] + 1;
+                for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
+                {
+                    if (memPlate[i, j] != null)
+                    {
+                        movable = false;
+                    }
+                    j++;
+                }
+            }
+            else if (deltaColonne > 0 && deltaLigne > 0) //Déplacement UL (Up-Left)
+            {
+                j = nLigne[0] - 1;
+                for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
+                {
+                    if (memPlate[i, j] != null)
+                    {
+                        movable = false;
+                    }
+                    j--;
+                }
+            }
+            else if (deltaColonne < 0 && deltaLigne > 0) // Déplacement DL (Down-Left)
+            {
+                j = nLigne[0] - 1;
+                for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                {
+                    if (memPlate[i, j] != null)
+                    {
+                        movable = false;
+                    }
+                    j--;
+                }
+            }
+            else if (deltaColonne < 0 && deltaLigne < 0) // Déplacement DR (Down-Right)
+            {
+                j = nLigne[0] + 1;
+                for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                {
+                    if (memPlate[i, j] != null)
+                    {
+                        movable = false;
+                    }
+                    j++;
+                }
             }
 
             return movable;
