@@ -6,4 +6,82 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="SkinPawn\Car\Bishop.png" />
+    <None Remove="SkinPawn\Car\Horse.png" />
+    <None Remove="SkinPawn\Car\King.png" />
+    <None Remove="SkinPawn\Car\Pawn.png" />
+    <None Remove="SkinPawn\Car\Queen.png" />
+    <None Remove="SkinPawn\Car\Tower.png" />
+    <None Remove="SkinPawn\Egypte\Bishop.png" />
+    <None Remove="SkinPawn\Egypte\Horse.png" />
+    <None Remove="SkinPawn\Egypte\King.png" />
+    <None Remove="SkinPawn\Egypte\Pawn.png" />
+    <None Remove="SkinPawn\Egypte\Queen.png" />
+    <None Remove="SkinPawn\Egypte\Tower.png" />
+    <None Remove="SkinPawn\Teletubbies\Bishop.png" />
+    <None Remove="SkinPawn\Teletubbies\Horse.png" />
+    <None Remove="SkinPawn\Teletubbies\King.png" />
+    <None Remove="SkinPawn\Teletubbies\Pawn.png" />
+    <None Remove="SkinPawn\Teletubbies\Queen.png" />
+    <None Remove="SkinPawn\Teletubbies\Tower.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="SkinPawn\Car\Bishop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Car\Horse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Car\King.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Car\Pawn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Car\Queen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Car\Tower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Egypte\Bishop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Egypte\Horse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Egypte\King.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Egypte\Pawn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Egypte\Queen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Egypte\Tower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Teletubbies\Bishop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Teletubbies\Horse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Teletubbies\King.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Teletubbies\Pawn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Teletubbies\Queen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\Teletubbies\Tower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

@@ -114,12 +114,18 @@ namespace Jeu_TFE_Echecs
         }
         public void SetUpGame()
         {
+
             List<string> pieces = new List<string>()
             {
                 "♜","♞","♝","♛","♚","♝","♞","♜",
                 "♟","♟️","♟️","♟️","♟️","♟️","♟️","♟️",
                 "♙","♙","♙","♙","♙","♙","♙","♙",
                 "♖","♘","♗","♕","♔","♗","♘","♖"
+            };
+
+            List<Image> egypte = new List<Image>()
+            {
+                
             };
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
