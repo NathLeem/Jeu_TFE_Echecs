@@ -68,3 +68,5 @@ C:\Users\Gabriel\Desktop\Jeu_TFE_Echecs\Jeu_TFE_Echecs\Jeu_TFE_Echecs\obj\Debug\
 C:\Users\Gabriel\Desktop\Jeu_TFE_Echecs\Jeu_TFE_Echecs\Jeu_TFE_Echecs\obj\Debug\netcoreapp3.1\Jeu_TFE_Echecs.dll
 C:\Users\Gabriel\Desktop\Jeu_TFE_Echecs\Jeu_TFE_Echecs\Jeu_TFE_Echecs\obj\Debug\netcoreapp3.1\Jeu_TFE_Echecs.pdb
 C:\Users\Gabriel\Desktop\Jeu_TFE_Echecs\Jeu_TFE_Echecs\Jeu_TFE_Echecs\obj\Debug\netcoreapp3.1\Jeu_TFE_Echecs.genruntimeconfig.cache
+H:\6TI\Multi\Jeu_TFE_Echecs\Jeu_TFE_Echecs\Jeu_TFE_Echecs\obj\Debug\netcoreapp3.1\Skins.g.cs
+H:\6TI\Multi\Jeu_TFE_Echecs\Jeu_TFE_Echecs\Jeu_TFE_Echecs\obj\Debug\netcoreapp3.1\Skins.baml
