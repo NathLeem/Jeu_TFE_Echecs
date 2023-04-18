@@ -31,7 +31,17 @@ namespace Jeu_TFE_Echecs.Pawns
                 }
             }
 
-            return movable;
+            if (movable)
+            {
+                _position[0] = nColonne[1];
+                _position[1] = nLigne[1];
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

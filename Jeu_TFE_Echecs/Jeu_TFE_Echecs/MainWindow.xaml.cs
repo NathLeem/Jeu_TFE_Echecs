@@ -272,6 +272,8 @@ namespace Jeu_TFE_Echecs
                         {
                             turn = "white";
                         }
+
+
                     }
                     
                 }
