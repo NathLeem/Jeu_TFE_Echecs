@@ -122,7 +122,7 @@ namespace Jeu_TFE_Echecs
                 "♖","♘","♗","♕","♔","♗","♘","♖"
             };*/
             List<BitmapImage> pieces;
-            
+
             SkinTeletubbies(out pieces);
             SkinEgypte(out pieces);
             SkinCar(out pieces);
@@ -137,10 +137,7 @@ namespace Jeu_TFE_Echecs
                     imBouton.Stretch = System.Windows.Media.Stretch.None;
                     button.Content = imBouton;
 
-
                     pieces.RemoveAt(0);
-
-
                 }
                 else
                 {
