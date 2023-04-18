@@ -45,7 +45,7 @@ namespace Jeu_TFE_Echecs.Pawns
 
             if (memPlate[nColonne[1], nLigne[1]] != null)
             {
-                if (memPlate[nColonne[0], nLigne[0]].Color == memPlate[nColonne[1], nLigne[1]].Color)
+                if (_color == memPlate[nColonne[1], nLigne[1]].Color)
                 {
                     movable = false;
                 }

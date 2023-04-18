@@ -24,12 +24,12 @@ namespace Jeu_TFE_Echecs
             InitializeComponent();
             exit.Click += new RoutedEventHandler(AnnulerChoix);
 
-            skin1.Click += new RoutedEventHandler(SelectSkin);
+            /*skin1.Click += new RoutedEventHandler(SelectSkin);
             skin2.Click += new RoutedEventHandler(SelectSkin);
             skin3.Click += new RoutedEventHandler(SelectSkin);
             skin4.Click += new RoutedEventHandler(SelectSkin);
             skin5.Click += new RoutedEventHandler(SelectSkin);
-            skin6.Click += new RoutedEventHandler(SelectSkin);
+            skin6.Click += new RoutedEventHandler(SelectSkin);*/
         }
 
         public void AnnulerChoix(object sender, RoutedEventArgs e)

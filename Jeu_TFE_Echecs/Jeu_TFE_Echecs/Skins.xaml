@@ -20,15 +20,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="exit" Height="75" Width="75" Background="Red">Annuler</Button>
-        <Button x:Name="valid" Height="75" Width="75" Background="Red" Grid.Column="2">Valider</Button>
-        
-        <Button Background="Black" Height="50" Width="50" x:Name="skin1" Grid.Column ="0" Grid.Row="1"></Button>
-        <Button Background="Black" Height="50" Width="50" x:Name="skin2" Grid.Column ="1" Grid.Row="1"></Button>
-        <Button Background="Black" Height="50" Width="50" x:Name="skin3" Grid.Column ="2" Grid.Row="1"></Button>
+        <Button x:Name="exit" Height="75" Width="75" Background="Red" Grid.Column="1">Annuler</Button>
 
-        <Button Background="Black" Height="50" Width="50" x:Name="skin4" Grid.Column ="0" Grid.Row="2"></Button>
-        <Button Background="Black" Height="50" Width="50" x:Name="skin5" Grid.Column ="1" Grid.Row="2"></Button>
-        <Button Background="Black" Height="50" Width="50" x:Name="skin6" Grid.Column ="2" Grid.Row="2"></Button>
+        <Button Background="Black" Height="50" Width="50" x:Name="classic" Grid.Column ="0" Grid.Row="1"></Button>
+        <Button Background="Black" Height="50" Width="50" x:Name="egypt" Grid.Column ="1" Grid.Row="1"></Button>
+        <Button Background="Black" Height="50" Width="50" x:Name="tele" Grid.Column ="2" Grid.Row="1"></Button>
+
+        <Button Background="Black" Height="50" Width="50" x:Name="vehicles" Grid.Column ="0" Grid.Row="2"></Button>
+        <Button Background="Black" Height="50" Width="50" x:Name="teachers" Grid.Column ="2" Grid.Row="2"></Button>
     </Grid>
 </Window>

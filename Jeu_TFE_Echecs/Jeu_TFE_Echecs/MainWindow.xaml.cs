@@ -154,11 +154,15 @@ namespace Jeu_TFE_Echecs
         {
             if(turn == "white")
             {
-                joueur.Background = Brushes.White;
+                tour.Background = Brushes.White;
+                tour.Text = "Trait au blancs";
+                tour.Foreground = Brushes.Black;
             }
             else
-            {
-                joueur.Background = Brushes.Black;
+            {           
+                tour.Background = Brushes.Black;
+                tour.Text = "Trait au noirs";
+                tour.Foreground = Brushes.White;
             }
         }
 

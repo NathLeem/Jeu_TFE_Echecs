@@ -16,9 +16,9 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">C'est au tour des</TextBlock>
-            
-            <TextBlock x:Name="joueur" Grid.Column="1" Background="White"/>
+            <TextBlock x:Name="tour" Text="Trait aux blancs" HorizontalAlignment="Center" Padding="0, 10, 0, 0" VerticalAlignment="Center" Background="White" Foreground="Black" FontWeight="Bold" Height="40"/>
+
+            <TextBlock x:Name="check" Grid.Column="1"></TextBlock>
             <TextBlock x:Name="afficheTime" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Text=""/>
 
             <StackPanel Grid.Column="2" >
