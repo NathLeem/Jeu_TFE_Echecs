@@ -122,7 +122,11 @@ namespace Jeu_TFE_Echecs
                 "♖","♘","♗","♕","♔","♗","♘","♖"
             };*/
             List<BitmapImage> pieces;
+            
+            SkinTeletubbies(out pieces);
             SkinEgypte(out pieces);
+            SkinCar(out pieces);
+            SkinDefault(out pieces);
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
             {
@@ -341,7 +345,7 @@ namespace Jeu_TFE_Echecs
                 egypteTower, egypteHorse, egypteBishop, egypteQueen, egypteKing, egypteBishop, egypteHorse, egypteTower
             };
         }
-        public void SkinCar()
+        public void SkinCar(out List<BitmapImage> car)
         {
             BitmapImage carBishop = new BitmapImage();
             carBishop.BeginInit();
@@ -369,11 +373,11 @@ namespace Jeu_TFE_Echecs
             carQueen.EndInit();
 
             BitmapImage carTower = new BitmapImage();
-            carQueen.BeginInit();
-            carQueen.UriSource = new Uri("SkinPawn/Car/Tower.png", UriKind.Relative);
-            carQueen.EndInit();
+            carTower.BeginInit();
+            carTower.UriSource = new Uri("SkinPawn/Car/Tower.png", UriKind.Relative);
+            carTower.EndInit();
 
-            List<BitmapImage> car = new List<BitmapImage>()
+            car = new List<BitmapImage>()
             {
                 carTower, carHorse, carBishop, carQueen, carKing, carBishop, carHorse, carTower,
                 carPawn, carPawn, carPawn, carPawn, carPawn, carPawn, carPawn, carPawn,
@@ -381,7 +385,7 @@ namespace Jeu_TFE_Echecs
                 carTower, carHorse, carBishop, carQueen, carKing, carBishop, carHorse, carTower
             };
         }
-        public void SkinTeletubbies()
+        public void SkinTeletubbies(out List<BitmapImage> tele)
         {
             BitmapImage teleBishop = new BitmapImage();
             teleBishop.BeginInit();
@@ -413,12 +417,53 @@ namespace Jeu_TFE_Echecs
             teleTower.UriSource = new Uri("SkinPawn/Teletubbies/Tower.png", UriKind.Relative);
             teleTower.EndInit();
 
-            List<BitmapImage> car = new List<BitmapImage>()
+            tele = new List<BitmapImage>()
             {
                 teleTower, teleHorse, teleBishop, teleQueen, teleKing, teleBishop, teleHorse, teleTower,
                 telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn,
                 telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn,
                 teleTower, teleHorse, teleBishop, teleQueen, teleKing, teleBishop, teleHorse, teleTower
+            };
+        }
+
+        public void SkinDefault(out List<BitmapImage> skindef)
+        {
+            BitmapImage defaultBishop = new BitmapImage();
+            defaultBishop.BeginInit();
+            defaultBishop.UriSource = new Uri("SkinPawn/default/Bishop.png", UriKind.Relative);
+            defaultBishop.EndInit();
+
+            BitmapImage defaultHorse = new BitmapImage();
+            defaultHorse.BeginInit();
+            defaultHorse.UriSource = new Uri("SkinPawn/default/Horse.png", UriKind.Relative);
+            defaultHorse.EndInit();
+
+            BitmapImage defaultKing = new BitmapImage();
+            defaultKing.BeginInit();
+            defaultKing.UriSource = new Uri("SkinPawn/default/King.png", UriKind.Relative);
+            defaultKing.EndInit();
+
+            BitmapImage defaultPawn = new BitmapImage();
+            defaultPawn.BeginInit();
+            defaultPawn.UriSource = new Uri("SkinPawn/default/Pawn.png", UriKind.Relative);
+            defaultPawn.EndInit();
+
+            BitmapImage defaultQueen = new BitmapImage();
+            defaultQueen.BeginInit();
+            defaultQueen.UriSource = new Uri("SkinPawn/default/Queen.png", UriKind.Relative);
+            defaultQueen.EndInit();
+
+            BitmapImage defaultTower = new BitmapImage();
+            defaultTower.BeginInit();
+            defaultTower.UriSource = new Uri("SkinPawn/default/Tower.png", UriKind.Relative);
+            defaultTower.EndInit();
+
+            skindef = new List<BitmapImage>()
+            {
+                defaultTower, defaultHorse, defaultBishop, defaultQueen, defaultKing, defaultBishop, defaultHorse, defaultTower,
+                defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn,
+                defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn,
+                defaultTower, defaultHorse, defaultBishop, defaultQueen, defaultKing, defaultBishop, defaultHorse, defaultTower
             };
         }
 

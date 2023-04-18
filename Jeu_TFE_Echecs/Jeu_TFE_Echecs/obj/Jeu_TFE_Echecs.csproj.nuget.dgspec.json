@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {}
+    "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {}
   },
   "projects": {
-    "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {
+    "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
+        "projectUniqueName": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
         "projectName": "Jeu_TFE_Echecs",
-        "projectPath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
-        "packagesPath": "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\",
-        "outputPath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\",
+        "projectPath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
+        "packagesPath": "C:\\Users\\200253.asty-moulin\\.nuget\\packages\\",
+        "outputPath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\200198.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\200253.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
