@@ -13,6 +13,12 @@
     <None Remove="SkinPawn\Car\Pawn.png" />
     <None Remove="SkinPawn\Car\Queen.png" />
     <None Remove="SkinPawn\Car\Tower.png" />
+    <None Remove="SkinPawn\default\Bishop.png" />
+    <None Remove="SkinPawn\default\Horse.png" />
+    <None Remove="SkinPawn\default\King.png" />
+    <None Remove="SkinPawn\default\Pawn.png" />
+    <None Remove="SkinPawn\default\Queen.png" />
+    <None Remove="SkinPawn\default\Tower.png" />
     <None Remove="SkinPawn\Egypte\Bishop.png" />
     <None Remove="SkinPawn\Egypte\Horse.png" />
     <None Remove="SkinPawn\Egypte\King.png" />
@@ -44,6 +50,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="SkinPawn\Car\Tower.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\default\Bishop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\default\Horse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\default\King.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\default\Pawn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\default\Queen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="SkinPawn\default\Tower.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="SkinPawn\Egypte\Bishop.png">
