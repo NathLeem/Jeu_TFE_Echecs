@@ -268,14 +268,38 @@ namespace Jeu_TFE_Echecs
 
                         if (turn == "white")
                         {
+                            if (pieces[14].IsChecked(memPlate))
+                            {
+                                check.Text = "ÉCHECS AUX NOIRS";
+                                check.Foreground = Brushes.White;
+                                check.Background = Brushes.Black;
+                            }
+                            else
+                            {
+                                check.Text = "";
+                                check.Background = Brushes.DarkCyan;
+                            }
+                            
                             turn = "black";
                         }
                         else
                         {
+                            if (pieces[15].IsChecked(memPlate))
+                            {
+                                check.Text = "ÉCHECS AUX BLANCS";
+                                check.Foreground = Brushes.Black;
+                                check.Background = Brushes.White;
+                            }
+                            else
+                            {
+                                check.Text = "";
+                                check.Background = Brushes.DarkCyan;
+                            }
+                            ;
                             turn = "white";
                         }
 
-
+                        
                     }
                     
                 }

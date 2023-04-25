@@ -25,7 +25,7 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 if (_notMove) //Il ne s'est pas encore déplacé il peut donc avancer de 2 cases si il le veut
                 {
-                    if ((deltaColonne == -2 || deltaColonne == -1 && nLigne[0] == nLigne[1]) || (Math.Abs(deltaLigne) == 1 && deltaColonne == -1)) //Condition de déplacement (Il ne peut avancer que en 100% verticale vers le bas de 1 ou 2 cases ou d'attaquer)
+                    if (((deltaColonne == -2 || deltaColonne == -1) && nLigne[0] == nLigne[1])  || (Math.Abs(deltaLigne) == 1 && deltaColonne == -1)) //Condition de déplacement (Il ne peut avancer que en 100% verticale vers le bas de 1 ou 2 cases ou d'attaquer)
                     {
                         if (deltaColonne == -2) //Il avance de 2 cases d'un coup
                         {
@@ -76,7 +76,7 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 if (_notMove)//Il ne s'est pas encore déplacé il peut donc avancer de 2 cases si il le veut
                 {
-                    if ((deltaColonne == 2 || deltaColonne == 1 && nLigne[0] == nLigne[1]) || (Math.Abs(deltaLigne) == 1 && deltaColonne == 1)) //Condition de déplacement (Il ne peut avancer que en 100% verticale vers le haut de 1 ou 2 cases ou d'attaquer)
+                    if (((deltaColonne == 2 || deltaColonne == 1) && nLigne[0] == nLigne[1]) || (Math.Abs(deltaLigne) == 1 && deltaColonne == 1)) //Condition de déplacement (Il ne peut avancer que en 100% verticale vers le haut de 1 ou 2 cases ou d'attaquer)
                     {
                         if (deltaColonne == 2) //Il se déplace de deux cases
                         {

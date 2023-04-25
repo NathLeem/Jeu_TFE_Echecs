@@ -19,7 +19,7 @@ namespace Jeu_TFE_Echecs.Pawns
 
         public override bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate)
         {
-            bool movable = false;
+            bool movable = true; 
 
             int deltaLigne = Math.Abs(nLigne[0] - nLigne[1]);
             int deltaColonne = Math.Abs(nColonne[0] - nColonne[1]);
@@ -29,9 +29,9 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 if (memPlate[nColonne[1], nLigne[1]] != null)
                 {
-                    if (_color != memPlate[nColonne[1], nLigne[1]].Color)
+                    if (_color == memPlate[nColonne[1], nLigne[1]].Color)
                     {
-                        movable = true;
+                        movable = false;
                     }
                 }
             }
@@ -50,7 +50,7 @@ namespace Jeu_TFE_Echecs.Pawns
             }
         }
 
-        public bool IsChecked(Piece[,] memPlate)  //Verifie l'échec de base (Si le roi est directement attaqué par une pièce)
+        public override bool IsChecked(Piece[,] memPlate)  //Verifie l'échec de base (Si le roi est directement attaqué par une pièce)
         {
             if (IsCheckedStraight(memPlate))
             {
@@ -60,14 +60,14 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 _check = true;
             }
-            else if (IsCheckedByHorse(memPlate))
+            /*else if (IsCheckedByHorse(memPlate))
             {
                 _check = true;
             }
             else if(IsCheckedByPawn(memPlate))
             {
                 _check = true;
-            }
+            }*/
             else
             {
                 _check = false;
@@ -101,7 +101,7 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     i--;
 
-                } while (!obstacle || i != 0);
+                } while (!obstacle && i >= 0);
             }
 
             obstacle = false;
@@ -123,7 +123,7 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     i++;
 
-                } while (!obstacle || i != 7);
+                } while (!obstacle && i <= 7);
             }
 
 
@@ -145,7 +145,7 @@ namespace Jeu_TFE_Echecs.Pawns
                         }
                     }
                     j--;
-                } while (!obstacle || j != 0);
+                } while (!obstacle && j >= 0);
             }
 
             obstacle = false;
@@ -166,7 +166,7 @@ namespace Jeu_TFE_Echecs.Pawns
                         }
                     }
                     j++;
-                } while (!obstacle || j != 7);
+                } while (!obstacle && j <= 7);
             }
 
             return false;
@@ -198,7 +198,7 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     i--;
                     j--;
-                } while (!obstacle && i != 0 || j != 0);
+                } while (!obstacle && i >= 0 && j >= 0);
             }
 
             obstacle = false;
@@ -221,7 +221,7 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     i++;
                     j--;
-                } while (!obstacle && i != 7 || j != 0);
+                } while (!obstacle && i <= 7 && j >= 0);
             }
 
             obstacle = false;
@@ -244,7 +244,7 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     i--;
                     j++;
-                } while (!obstacle && i != 0 || j != 7);
+                } while (!obstacle && i >= 0 && j <= 7);
             }
 
             obstacle = false;
@@ -267,7 +267,7 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     i++;
                     j++;
-                } while (!obstacle && i != 7 || j != 7);
+                } while (!obstacle && i <= 7 && j <= 7);
             }
 
             return false;
@@ -418,7 +418,7 @@ namespace Jeu_TFE_Echecs.Pawns
             return false;
         }
 
-        public bool IsCheckedByPawn(Piece[,] memPlate)
+        /*public bool IsCheckedByPawn(Piece[,] memPlate)
         {
             if (_color == "white")
             {
@@ -476,6 +476,6 @@ namespace Jeu_TFE_Echecs.Pawns
             }
             return false;
 
-        }
+        }*/
     }
 }

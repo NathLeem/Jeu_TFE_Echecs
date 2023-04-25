@@ -22,6 +22,10 @@ namespace Jeu_TFE_Echecs
 
         public abstract bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate);
 
+        public virtual bool IsChecked(Piece[,] memPlate)
+        {
+            return true;
+        }
         public string TypePiece
         {
             get { return _typePiece; }
