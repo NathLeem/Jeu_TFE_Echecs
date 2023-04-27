@@ -123,10 +123,10 @@ namespace Jeu_TFE_Echecs
             };*/
             List<BitmapImage> pieces;
 
-            SkinTeletubbies(out pieces);
-            SkinEgypte(out pieces);
             SkinCar(out pieces);
             SkinDefault(out pieces);
+            SkinTeletubbies(out pieces);
+            SkinEgypte(out pieces);
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
             {
@@ -135,6 +135,7 @@ namespace Jeu_TFE_Echecs
                     Image imBouton = new Image();
                     imBouton.Source = pieces[0];
                     imBouton.Stretch = System.Windows.Media.Stretch.None;
+                    imBouton.Stretch = Stretch.Uniform;
                     button.Content = imBouton;
 
                     pieces.RemoveAt(0);

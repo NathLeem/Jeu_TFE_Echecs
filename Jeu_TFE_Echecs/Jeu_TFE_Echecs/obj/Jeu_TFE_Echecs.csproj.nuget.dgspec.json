@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
         "packagesPath": "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\",
         "outputPath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\",
+=======
+    "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {}
+  },
+  "projects": {
+    "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
+        "projectName": "Jeu_TFE_Echecs",
+        "projectPath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
+        "packagesPath": "C:\\Users\\200253.asty-moulin\\.nuget\\packages\\",
+        "outputPath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\",
+>>>>>>> 2e4633d74e4562548d73fa1b31a6849c018338dd
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\200198.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\200253.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2e4633d74e4562548d73fa1b31a6849c018338dd
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +78,11 @@
               "privateAssets": "none"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+>>>>>>> 2e4633d74e4562548d73fa1b31a6849c018338dd
         }
       }
     }
