@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "vdXRxVSlacfNQWZMjU5ZF7BUDawCkN9Z5jszHERWPOMNciwCfV0SUz6i7045qvIJgNcVYTo4KraYqIj+XOO/kg==",
+  "dgSpecHash": "g9lOeYS4hVswv030t6yDvNpvywArWBR12Y2NYc3NXMHq0fKR1wEKdT2nYop+V0/fMIUCPzJ+zslM0+c4giVzig==",
   "success": true,
-  "projectFilePath": "H:\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
-=======
-  "dgSpecHash": "kXh0VDUOB4mjDf/Wzyi5v/xl2vhPfXyYNbfFk4fGwDi9JV9SOgB8EKlQHN2jXNvud72Y7BzzeUtB36KsuCUr/Q==",
-  "success": true,
-  "projectFilePath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
->>>>>>> 2e4633d74e4562548d73fa1b31a6849c018338dd
+  "projectFilePath": "C:\\Users\\Gabriel\\Desktop\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Gabriel\\Desktop\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\Jeu_TFE_Echecs\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

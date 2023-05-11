@@ -7,7 +7,7 @@ namespace Jeu_TFE_Echecs.Pawns
     class Tower : Piece
     {
         private bool _roc;
-        public Tower(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
+        public Tower(int[] position, string color) : base(position, color)
         {
             _roc = true;
         }
@@ -19,12 +19,12 @@ namespace Jeu_TFE_Echecs.Pawns
             bool nCSame = false;
             bool nLSame = false;
 
-            if(nColonne[0] == nColonne[1])
+            if(_position[0] == nColonne[1])
             {
                 nCSame = true;
             }
 
-            if(nLigne[0] == nLigne[1])
+            if(_position[1] == nLigne[1])
             {
                 nLSame = true;
             }
@@ -35,11 +35,11 @@ namespace Jeu_TFE_Echecs.Pawns
 
                 if (nCSame)
                 {
-                    if(nLigne[0] > nLigne[1])
+                    if(_position[1] > nLigne[1])
                     {
-                        for (int i = nLigne[0] - 1; i > nLigne[1]; i--)
+                        for (int i = _position[1] - 1; i > nLigne[1]; i--)
                         {
-                            if(memPlate[nColonne[0], i] != null)
+                            if(memPlate[_position[0], i] != null)
                             {
                                 movable = false;
                             }
@@ -47,9 +47,9 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     else
                     {
-                        for (int i = nLigne[0] + 1; i < nLigne[1]; i++)
+                        for (int i = _position[1] + 1; i < nLigne[1]; i++)
                         {
-                            if (memPlate[nColonne[0], i] != null)
+                            if (memPlate[_position[0], i] != null)
                             {
                                 movable = false;
                             }
@@ -58,11 +58,11 @@ namespace Jeu_TFE_Echecs.Pawns
                 }
                 else
                 {
-                    if (nColonne[0] > nColonne[1])
+                    if (_position[0] > nColonne[1])
                     {
-                        for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
+                        for (int i = _position[0] - 1; i > nColonne[1]; i--)
                         {
-                            if (memPlate[i, nLigne[0]] != null)
+                            if (memPlate[i, _position[1]] != null)
                             {
                                 movable = false;
                             }
@@ -70,9 +70,9 @@ namespace Jeu_TFE_Echecs.Pawns
                     }
                     else
                     {
-                        for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                        for (int i = _position[0] + 1; i < nColonne[1]; i++)
                         {
-                            if (memPlate[i, nLigne[0]] != null)
+                            if (memPlate[i, _position[1]] != null)
                             {
                                 movable = false;
                             }

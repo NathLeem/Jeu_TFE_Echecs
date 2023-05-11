@@ -6,7 +6,7 @@ namespace Jeu_TFE_Echecs.Pawns
 {
     class Horse : Piece 
     {
-        public Horse(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
+        public Horse(int[] position, string color) : base(position, color)
         {
 
         }
@@ -15,8 +15,8 @@ namespace Jeu_TFE_Echecs.Pawns
         {
             bool movable = false;
 
-            int deltaColonne = Math.Abs(nColonne[0] - nColonne[1]);
-            int deltaLigne = Math.Abs(nLigne[0] - nLigne[1]);
+            int deltaColonne = Math.Abs(_position[0] - nColonne[1]);
+            int deltaLigne = Math.Abs(_position[1] - nLigne[1]);
 
             if ((deltaLigne == 2 && deltaColonne == 1) || (deltaLigne == 1 && deltaColonne == 2))
             {

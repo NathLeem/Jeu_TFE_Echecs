@@ -4,33 +4,25 @@ using System.Text;
 
 namespace Jeu_TFE_Echecs
 {
-    abstract class Piece
+    public abstract class Piece //Classe mère et principale de toutes les pièces confondues du jeu qui leur donne toutes leurs propriétés communes
     {
-        protected int[] _position;
-        protected string _color;
-        protected string _typePiece;
-        protected sbyte _id;
-        private List<string> _moves = new List<string>();
+        protected int[] _position;      //Enregistre la position de la pièce
+        protected string _color;        //Détermine sa couleur
 
-        public Piece(int[] position, string color, string typePiece, sbyte id)
+        public Piece(int[] position, string color)  //Constructeur des pièces
         {
             this._position = position;
             this._color = color;
-            this._typePiece = typePiece;
-            this._id = id;
         }
 
-        public abstract bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate);
+        public abstract bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate);   //Fonction qui détermine à chaque pièce sa manière de se déplacer
 
-        public virtual bool IsChecked(Piece[,] memPlate)
+        public virtual bool IsChecked(Piece[,] memPlate)    //Fonction propre au roi pour voir si il est en échecs, mais est appelé depuis ici par simplification
         {
-            return true;
+            return true;    //Code brouillon, facultatif
         }
-        public string TypePiece
-        {
-            get { return _typePiece; }
-        }
-        public string Color
+
+        public string Color //Renvoie la couleur
         {
             get { return _color; }
         }

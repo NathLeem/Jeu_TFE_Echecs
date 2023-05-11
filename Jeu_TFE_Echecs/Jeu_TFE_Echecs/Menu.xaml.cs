@@ -36,7 +36,7 @@ namespace Jeu_TFE_Echecs
         public void LancerPartie(object sender, RoutedEventArgs e)
         {
             jeu.Show();
-            play.IsEnabled = false;
+            play.IsEnabled = false; //Empêche le joueur de lancer plusieurs parties en même temps
         }
 
         public void MontrerLesRegles(object sender, RoutedEventArgs e)

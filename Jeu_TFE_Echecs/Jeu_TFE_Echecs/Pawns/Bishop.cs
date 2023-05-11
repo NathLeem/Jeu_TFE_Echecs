@@ -6,7 +6,7 @@ namespace Jeu_TFE_Echecs.Pawns
 {
     class Bishop : Piece
     {
-        public Bishop(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
+        public Bishop(int[] position, string color) : base(position, color)
         {
 
         }
@@ -15,8 +15,8 @@ namespace Jeu_TFE_Echecs.Pawns
         {
             bool movable = false;
 
-            int deltaLigne = nLigne[0] - nLigne[1];
-            int deltaColonne = nColonne[0] - nColonne[1];
+            int deltaLigne = _position[1] - nLigne[1];
+            int deltaColonne = _position[0] - nColonne[1];
 
             if (Math.Abs(deltaLigne) == Math.Abs(deltaColonne))
             {
@@ -25,8 +25,8 @@ namespace Jeu_TFE_Echecs.Pawns
                 int j;
                 if (deltaColonne > 0 && deltaLigne < 0) //Déplacement UR (Up-Right)
                 {
-                    j = nLigne[0] + 1;
-                    for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
+                    j = _position[1] + 1;
+                    for (int i = _position[0] - 1; i > nColonne[1]; i--)
                     {
                         if (memPlate[i, j] != null)
                         {
@@ -37,8 +37,8 @@ namespace Jeu_TFE_Echecs.Pawns
                 }
                 else if (deltaColonne > 0 && deltaLigne > 0) //Déplacement UL (Up-Left)
                 {
-                    j = nLigne[0] - 1;
-                    for (int i = nColonne[0] - 1; i > nColonne[1]; i--)
+                    j = _position[1] - 1;
+                    for (int i = _position[0] - 1; i > nColonne[1]; i--)
                     {
                         if (memPlate[i, j] != null)
                         {
@@ -49,8 +49,8 @@ namespace Jeu_TFE_Echecs.Pawns
                 }
                 else if (deltaColonne < 0 && deltaLigne > 0) // Déplacement DL (Down-Left)
                 {
-                    j = nLigne[0] - 1;
-                    for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                    j = _position[1] - 1;
+                    for (int i = _position[0] + 1; i < nColonne[1]; i++)
                     {
                         if (memPlate[i, j] != null)
                         {
@@ -61,8 +61,8 @@ namespace Jeu_TFE_Echecs.Pawns
                 }
                 else if (deltaColonne < 0 && deltaLigne < 0) // Déplacement DR (Down-Right)
                 {
-                    j = nLigne[0] + 1;
-                    for (int i = nColonne[0] + 1; i < nColonne[1]; i++)
+                    j = _position[1] + 1;
+                    for (int i = _position[0] + 1; i < nColonne[1]; i++)
                     {
                         if (memPlate[i, j] != null)
                         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Documents;
 
 namespace Jeu_TFE_Echecs.Pawns
 {
@@ -10,33 +11,16 @@ namespace Jeu_TFE_Echecs.Pawns
         private bool _checkMate;
         private bool _roc;
 
-        public King(int[] position, string color, string typePiece, sbyte id) : base(position, color, typePiece, id)
+        public King(int[] position, string color) : base(position, color)
         {
             _check = false;
             _checkMate = false;
-            _roc = false;
+            _roc = true;
         }
 
         public override bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate)
         {
-            bool movable = true; 
-
-            int deltaLigne = Math.Abs(nLigne[0] - nLigne[1]);
-            int deltaColonne = Math.Abs(nColonne[0] - nColonne[1]);
-            int sommeDelta = Math.Abs(deltaColonne + deltaLigne);
-
-            if (sommeDelta <= 2 && deltaLigne != 2 && deltaColonne != 2)
-            {
-                if (memPlate[nColonne[1], nLigne[1]] != null)
-                {
-                    if (_color == memPlate[nColonne[1], nLigne[1]].Color)
-                    {
-                        movable = false;
-                    }
-                }
-            }
-
-            if (movable)
+           if (BasicMove(nColonne, nLigne, memPlate))
             {
                 _position[0] = nColonne[1];
                 _position[1] = nLigne[1];
@@ -48,6 +32,106 @@ namespace Jeu_TFE_Echecs.Pawns
             {
                 return false;
             }
+        }
+
+        private bool BasicMove(int[] nColonne, int[] nLigne, Piece[,] memPlate)
+        {
+            bool movable = false;
+
+            int deltaLigne = Math.Abs(nLigne[0] - nLigne[1]);
+            int deltaColonne = Math.Abs(nColonne[0] - nColonne[1]);
+            int sommeDelta = Math.Abs(deltaColonne + deltaLigne);
+
+            if (sommeDelta <= 2 && deltaLigne != 2 && deltaColonne != 2)
+            {
+                movable = true;
+                if (memPlate[nColonne[1], nLigne[1]] != null)
+                {                    
+                    if (_color == memPlate[nColonne[1], nLigne[1]].Color)
+                    {
+                        movable = false;
+                    }
+                }
+            }
+
+            return movable;
+        }
+
+        private bool Roc(int[] nColonne, int[] nLigne, Piece[,] memPlate)
+        {
+            if (_roc)
+            {
+                if (_color == "white")
+                {
+                    if (nColonne[1] == 7 && nLigne[1] == 0)
+                    {
+                        bool noObstacle = true;
+                        for (int i = _position[1]; i > nLigne[1] + 1; i--)
+                        {
+                            if (memPlate[nColonne[1], i] != null)
+                            {
+                                noObstacle = false;
+                            }
+                        }
+                        if(noObstacle)
+                        {
+                            return true;
+                        }
+                    }
+                    else if (nColonne[1] == 7 && nLigne[1] == 7)
+                    {
+                        bool noObstacle = true;
+                        for (int i = _position[1]; i < nLigne[1] - 1; i++)
+                        {
+                            if (memPlate[nColonne[1], i] != null)
+                            {
+                                noObstacle = false;
+                            }
+                        }
+                        if (noObstacle)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (nColonne[1] == 0 && nLigne[1] == 0)
+                    {
+                        bool noObstacle = true;
+                        for (int i = _position[1]; i > nLigne[1]; i--)
+                        {
+                            if (memPlate[nColonne[1], i] != null)
+                            {
+                                noObstacle = false;
+                            }
+                        }
+                        if (noObstacle)
+                        {
+                            return true;
+                        }
+                    }
+                    else if (nColonne[1] == 0 && nLigne[1] == 7)
+                    {
+                        bool noObstacle = true;
+                        for (int i = _position[1]; i < nLigne[1]; i++)
+                        {
+                            if (memPlate[nColonne[1], i] != null)
+                            {
+                                noObstacle = false;
+                            }
+                        }
+                        if (noObstacle)
+                        {
+                            return true;
+                        }
+                    }
+
+                }
+            }
+
+            return false;
+            
         }
 
         public override bool IsChecked(Piece[,] memPlate)  //Verifie l'échec de base (Si le roi est directement attaqué par une pièce)
