@@ -63,29 +63,30 @@ namespace Chess
         }
         public void PrepareGame(ref Grid grdPlate)   //Fonction qui va préparer
         {
-            List<string> pieces = new List<string>()
+            /*List<string> pieces = new List<string>()
             {
                 "♜","♞","♝","♛","♚","♝","♞","♜",
                 "♟","♟️","♟️","♟️","♟️","♟️","♟️","♟️",
                 "♙","♙","♙","♙","♙","♙","♙","♙",
                 "♖","♘","♗","♕","♔","♗","♘","♖"
-            };
-            /*List<BitmapImage> pieces;   //Liste des skins. NOTE : les pièces sont déjà placées dans l'ordre dans la liste comme si ils étaient déjà sur le plateau, de sorte à ce que l'on doit parcourir que le premier indice de la liste pour palcer les pièces
+            };*/
+            
+            List<BitmapImage> pieces;   //Liste des skins. NOTE : les pièces sont déjà placées dans l'ordre dans la liste comme si ils étaient déjà sur le plateau, de sorte à ce que l'on doit parcourir que le premier indice de la liste pour palcer les pièces
 
             SkinCar(out pieces);            //Skins des véhicules
             SkinDefault(out pieces);        //Skins par défaut
             SkinTeletubbies(out pieces);    //Skins des Télétubbies
-            SkinEgypte(out pieces);         //Skins des dieux égyptiens */
+            SkinEgypte(out pieces);         //Skins des dieux égyptiens 
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
             {
                 if (button.Content == "?")  //Là où il y a des points d'interrogations, on place une pièce
                 {
-                    /*Image imBouton = new Image();
+                    Image imBouton = new Image();
                     imBouton.Source = pieces[0];
                     imBouton.Stretch = System.Windows.Media.Stretch.None;
-                    imBouton.Stretch = Stretch.Uniform;*/
-                    button.Content = pieces[0];  //Placement de la pièce
+                    imBouton.Stretch = Stretch.Uniform;
+                    button.Content = imBouton;  //Placement de la pièce
 
                     pieces.RemoveAt(0);
                 }
@@ -102,46 +103,82 @@ namespace Chess
         }
 
         private void SkinEgypte(out List<BitmapImage> egypte)   //Fonction qui met prêt à utilisation les skins des dieux Egyptiens
-        {
-            BitmapImage egypteBishop = new BitmapImage();
-            egypteBishop.BeginInit();
-            egypteBishop.UriSource = new Uri("/SkinPieces/Egypt/Bishop.png", UriKind.Relative);
-            egypteBishop.EndInit();
+        {           
+                BitmapImage egypteBishopWhite = new BitmapImage();
+                egypteBishopWhite.BeginInit();
+                egypteBishopWhite.UriSource = new Uri("/SkinPieces/Egypt/BishopWhite.png", UriKind.Relative);
+                egypteBishopWhite.EndInit();
 
-            BitmapImage egypteHorse = new BitmapImage();
-            egypteHorse.BeginInit();
-            egypteHorse.UriSource = new Uri("/SkinPieces/Egypt/Horse.png", UriKind.Relative);
-            egypteHorse.EndInit();
+                BitmapImage egypteBishopBlack = new BitmapImage();
+                egypteBishopBlack.BeginInit();
+                egypteBishopBlack.UriSource = new Uri("/SkinPieces/Egypt/BishopBlack.png", UriKind.Relative);
+                egypteBishopBlack.EndInit();
 
-            BitmapImage egypteKing = new BitmapImage();
-            egypteKing.BeginInit();
-            egypteKing.UriSource = new Uri("/SkinPieces/Egypt/King.png", UriKind.Relative);
-            egypteKing.EndInit();
 
-            BitmapImage egyptePawn = new BitmapImage();
-            egyptePawn.BeginInit();
-            egyptePawn.UriSource = new Uri("/SkinPieces/Egypt/Pawn.png", UriKind.Relative);
-            egyptePawn.EndInit();
+                BitmapImage egypteHorseWhite = new BitmapImage();
+                egypteHorseWhite.BeginInit();
+                egypteHorseWhite.UriSource = new Uri("/SkinPieces/Egypt/HorseWhite.png", UriKind.Relative);
+                egypteHorseWhite.EndInit();
 
-            BitmapImage egypteQueen = new BitmapImage();
-            egypteQueen.BeginInit();
-            egypteQueen.UriSource = new Uri("/SkinPieces/Egypt/Queen.png", UriKind.Relative);
-            egypteQueen.EndInit();
+                BitmapImage egypteHorseBlack = new BitmapImage();
+                egypteHorseBlack.BeginInit();
+                egypteHorseBlack.UriSource = new Uri("/SkinPieces/Egypt/HorseBlack.png", UriKind.Relative);
+                egypteHorseBlack.EndInit();
 
-            BitmapImage egypteTower = new BitmapImage();
-            egypteTower.BeginInit();
-            egypteTower.UriSource = new Uri("/SkinPieces/Egypt/Tower.png", UriKind.Relative);
-            egypteTower.EndInit();
 
-            egypte = new List<BitmapImage>()
+                BitmapImage egypteKingWhite = new BitmapImage();
+                egypteKingWhite.BeginInit();
+                egypteKingWhite.UriSource = new Uri("/SkinPieces/Egypt/KingWhite.png", UriKind.Relative);
+                  egypteKingWhite.EndInit();
+
+                BitmapImage egypteKingBlack = new BitmapImage();
+                egypteKingBlack.BeginInit();
+                egypteKingBlack.UriSource = new Uri("/SkinPieces/Egypt/KingBlack.png", UriKind.Relative);
+                egypteKingBlack.EndInit();
+
+
+                BitmapImage egyptePawnWhite = new BitmapImage();
+                egyptePawnWhite.BeginInit();
+                egyptePawnWhite.UriSource = new Uri("/SkinPieces/Egypt/PawnWhite.png", UriKind.Relative);
+                egyptePawnWhite.EndInit();
+
+                BitmapImage egyptePawnBlack = new BitmapImage();
+                egyptePawnBlack.BeginInit();
+                egyptePawnBlack.UriSource = new Uri("/SkinPieces/Egypt/PawnBlack.png", UriKind.Relative);
+                egyptePawnBlack.EndInit();
+
+
+                BitmapImage egypteQueenWhite = new BitmapImage();
+                egypteQueenWhite.BeginInit();
+                egypteQueenWhite.UriSource = new Uri("/SkinPieces/Egypt/QueenWhite.png", UriKind.Relative);
+                egypteQueenWhite.EndInit();
+
+                BitmapImage egypteQueenBlack = new BitmapImage();
+                egypteQueenBlack.BeginInit();
+                egypteQueenBlack.UriSource = new Uri("/SkinPieces/Egypt/QueenBlack.png", UriKind.Relative);
+                egypteQueenBlack.EndInit();
+
+
+                BitmapImage egypteTowerWhite = new BitmapImage();
+                egypteTowerWhite.BeginInit();
+                egypteTowerWhite.UriSource = new Uri("/SkinPieces/Egypt/TowerWhite.png", UriKind.Relative);
+                egypteTowerWhite.EndInit();
+
+                BitmapImage egypteTowerBlack = new BitmapImage();
+                egypteTowerBlack.BeginInit();
+                egypteTowerBlack.UriSource = new Uri("/SkinPieces/Egypt/TowerBlack.png", UriKind.Relative);
+                egypteTowerBlack.EndInit();
+
+                egypte = new List<BitmapImage>()
             {
-                egypteTower, egypteHorse, egypteBishop, egypteQueen, egypteKing, egypteBishop, egypteHorse, egypteTower,
-                egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn,
-                egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn, egyptePawn,
-                egypteTower, egypteHorse, egypteBishop, egypteQueen, egypteKing, egypteBishop, egypteHorse, egypteTower
+                egypteTowerBlack, egypteHorseBlack, egypteBishopBlack, egypteQueenBlack, egypteKingBlack, egypteBishopBlack, egypteHorseBlack, egypteTowerBlack,
+                egyptePawnBlack, egyptePawnBlack, egyptePawnBlack, egyptePawnBlack, egyptePawnBlack, egyptePawnBlack, egyptePawnBlack, egyptePawnBlack,
+                egyptePawnWhite, egyptePawnWhite, egyptePawnWhite, egyptePawnWhite, egyptePawnWhite, egyptePawnWhite, egyptePawnWhite, egyptePawnWhite,
+                egypteTowerWhite, egypteHorseWhite, egypteBishopWhite, egypteQueenWhite, egypteKingWhite, egypteBishopWhite, egypteHorseWhite, egypteTowerWhite
             };
         }
-        private void SkinCar(out List<BitmapImage> car)     //Fonction qui met prêt à utilisation les skins des véhicules
+       
+            private void SkinCar(out List<BitmapImage> car)     //Fonction qui met prêt à utilisation les skins des véhicules
         {
             BitmapImage carBishop = new BitmapImage();
             carBishop.BeginInit();
