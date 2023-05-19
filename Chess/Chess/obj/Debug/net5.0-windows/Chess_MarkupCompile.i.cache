@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-H:\Jeu_TFE_Echecs\Chess\Chess\obj\Debug\net5.0-windows\
+C:\Users\Gabriel\Desktop\Jeu_TFE_Echecs\Chess\Chess\obj\Debug\net5.0-windows\
 Chess
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-H:\Jeu_TFE_Echecs\Chess\Chess\App.xaml
+C:\Users\Gabriel\Desktop\Jeu_TFE_Echecs\Chess\Chess\App.xaml
 4-205558815
 
 16-1934599389
-193-1891726104
+193743005248
 Frames\Game.xaml;Frames\Lobby.xaml;Frames\Skins.xaml;MainWindow.xaml;
 
-False
+True
 

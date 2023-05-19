@@ -371,7 +371,7 @@ namespace Chess.Pieces
                     {
                         if (memPlate[_position[0] - 1, _position[1] - 2] is Horse) //La case est comblée par un cavalier
                         {
-                            if (memPlate[_position[0] - 1, _position[1] - 2].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                            if (memPlate[_position[0] - 1, _position[1] - 2].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                             {
                                 return true; //Le roi est en échec
                             }
@@ -386,7 +386,7 @@ namespace Chess.Pieces
                     {
                         if (memPlate[_position[0] - 1, _position[1] + 2] is Horse) //La case est comblée par un cavalier
                         {
-                            if (memPlate[_position[0] - 1, _position[1] + 2].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                            if (memPlate[_position[0] - 1, _position[1] + 2].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                             {
                                 return true; //Le roi est en échec
                             }
@@ -405,7 +405,7 @@ namespace Chess.Pieces
                         {
                             if (memPlate[_position[0] - 2, _position[1] - 1] is Horse) //La case est comblée par un cavalier
                             {
-                                if (memPlate[_position[0] - 2, _position[1] - 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                                if (memPlate[_position[0] - 2, _position[1] - 1].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                                 {
                                     return true; //Le roi est en échec
                                 }
@@ -420,7 +420,7 @@ namespace Chess.Pieces
                         {
                             if (memPlate[_position[0] - 2, _position[1] + 1] is Horse) //La case est comblée par un cavalier
                             {
-                                if (memPlate[_position[0] - 2, _position[1] + 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                                if (memPlate[_position[0] - 2, _position[1] + 1].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                                 {
                                     return true; //Le roi est en échec
                                 }
@@ -443,7 +443,7 @@ namespace Chess.Pieces
                     {
                         if (memPlate[_position[0] + 1, _position[1] - 2] is Horse) //La case est comblée par un cavalier
                         {
-                            if (memPlate[_position[0] + 1, _position[1] - 2].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                            if (memPlate[_position[0] + 1, _position[1] - 2].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                             {
                                 return true; //Le roi est en échec
                             }
@@ -458,7 +458,7 @@ namespace Chess.Pieces
                     {
                         if (memPlate[_position[0] + 1, _position[1] + 2] is Horse) //La case est comblée par un cavalier
                         {
-                            if (memPlate[_position[0] + 1, _position[1] + 2].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                            if (memPlate[_position[0] + 1, _position[1] + 2].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                             {
                                 return true; //Le roi est en échec
                             }
@@ -476,7 +476,7 @@ namespace Chess.Pieces
                         {
                             if (memPlate[_position[0] + 2, _position[1] - 1] is Horse) //La case est comblée par un cavalier
                             {
-                                if (memPlate[_position[0] + 2, _position[1] - 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                                if (memPlate[_position[0] + 2, _position[1] - 1].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                                 {
                                     return true; //Le roi est en échec
                                 }
@@ -491,7 +491,7 @@ namespace Chess.Pieces
                         {
                             if (memPlate[_position[0] + 2, _position[1] + 1] is Horse) //La case est comblée par un cavalier
                             {
-                                if (memPlate[_position[0] + 2, _position[1] + 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                                if (memPlate[_position[0] + 2, _position[1] + 1].Color != _color) //Le cavalier n'est pas de la même couleur que le roi
                                 {
                                     return true; //Le roi est en échec
                                 }

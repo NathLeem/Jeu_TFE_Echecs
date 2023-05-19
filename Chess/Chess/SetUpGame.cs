@@ -178,44 +178,79 @@ namespace Chess
             };
         }
        
-            private void SkinCar(out List<BitmapImage> car)     //Fonction qui met prêt à utilisation les skins des véhicules
+        private void SkinCar(out List<BitmapImage> car)     //Fonction qui met prêt à utilisation les skins des véhicules
         {
-            BitmapImage carBishop = new BitmapImage();
-            carBishop.BeginInit();
-            carBishop.UriSource = new Uri("/SkinPieces/Cars/Bishop.png", UriKind.Relative);
-            carBishop.EndInit();
+            BitmapImage carBishopWhite = new BitmapImage();
+            carBishopWhite.BeginInit();
+            carBishopWhite.UriSource = new Uri("/SkinPieces/Cars/BishopWhite.png", UriKind.Relative);
+            carBishopWhite.EndInit();
 
-            BitmapImage carHorse = new BitmapImage();
-            carHorse.BeginInit();
-            carHorse.UriSource = new Uri("/SkinPieces/Cars/Horse.png", UriKind.Relative);
-            carHorse.EndInit();
+            BitmapImage carBishopBlack = new BitmapImage();
+            carBishopBlack.BeginInit();
+            carBishopBlack.UriSource = new Uri("/SkinPieces/Cars/BishopBlack.png", UriKind.Relative);
+            carBishopBlack.EndInit();
 
-            BitmapImage carKing = new BitmapImage();
-            carKing.BeginInit();
-            carKing.UriSource = new Uri("/SkinPieces/Cars/King.png", UriKind.Relative);
-            carKing.EndInit();
 
-            BitmapImage carPawn = new BitmapImage();
-            carPawn.BeginInit();
-            carPawn.UriSource = new Uri("/SkinPieces/Cars/Pawn.png", UriKind.Relative);
-            carPawn.EndInit();
+            BitmapImage carHorseWhite = new BitmapImage();
+            carHorseWhite.BeginInit();
+            carHorseWhite.UriSource = new Uri("/SkinPieces/Cars/HorseWhite.png", UriKind.Relative);
+            carHorseWhite.EndInit();
 
-            BitmapImage carQueen = new BitmapImage();
-            carQueen.BeginInit();
-            carQueen.UriSource = new Uri("/SkinPieces/Cars/Queen.png", UriKind.Relative);
-            carQueen.EndInit();
+            BitmapImage carHorseBlack = new BitmapImage();
+            carHorseBlack.BeginInit();
+            carHorseBlack.UriSource = new Uri("/SkinPieces/Cars/HorseBlack.png", UriKind.Relative);
+            carHorseBlack.EndInit();
 
-            BitmapImage carTower = new BitmapImage();
-            carTower.BeginInit();
-            carTower.UriSource = new Uri("/SkinPieces/Cars/Tower.png", UriKind.Relative);
-            carTower.EndInit();
+
+            BitmapImage carKingWhite = new BitmapImage();
+            carKingWhite.BeginInit();
+            carKingWhite.UriSource = new Uri("/SkinPieces/Cars/KingWhite.png", UriKind.Relative);
+            carKingWhite.EndInit();
+
+            BitmapImage carKingBlack = new BitmapImage();
+            carKingBlack.BeginInit();
+            carKingBlack.UriSource = new Uri("/SkinPieces/Cars/KingBlack.png", UriKind.Relative);
+            carKingBlack.EndInit();
+
+
+            BitmapImage carPawnWhite = new BitmapImage();
+            carPawnWhite.BeginInit();
+            carPawnWhite.UriSource = new Uri("/SkinPieces/Cars/PawnWhite.png", UriKind.Relative);
+            carPawnWhite.EndInit();
+
+            BitmapImage carPawnBlack = new BitmapImage();
+            carPawnBlack.BeginInit();
+            carPawnBlack.UriSource = new Uri("/SkinPieces/Cars/PawnBlack.png", UriKind.Relative);
+            carPawnBlack.EndInit();
+
+
+            BitmapImage carQueenWhite = new BitmapImage();
+            carQueenWhite.BeginInit();
+            carQueenWhite.UriSource = new Uri("/SkinPieces/Cars/QueenWhite.png", UriKind.Relative);
+            carQueenWhite.EndInit();
+
+            BitmapImage carQueenBlack = new BitmapImage();
+            carQueenBlack.BeginInit();
+            carQueenBlack.UriSource = new Uri("/SkinPieces/Cars/QueenBlack.png", UriKind.Relative);
+            carQueenBlack.EndInit();
+
+
+            BitmapImage carTowerWhite = new BitmapImage();
+            carTowerWhite.BeginInit();
+            carTowerWhite.UriSource = new Uri("/SkinPieces/Cars/TowerWhite.png", UriKind.Relative);
+            carTowerWhite.EndInit();
+
+            BitmapImage carTowerBlack = new BitmapImage();
+            carTowerBlack.BeginInit();
+            carTowerBlack.UriSource = new Uri("/SkinPieces/Cars/TowerBlack.png", UriKind.Relative);
+            carTowerBlack.EndInit();
 
             car = new List<BitmapImage>()
             {
-                carTower, carHorse, carBishop, carQueen, carKing, carBishop, carHorse, carTower,
-                carPawn, carPawn, carPawn, carPawn, carPawn, carPawn, carPawn, carPawn,
-                carPawn, carPawn, carPawn, carPawn, carPawn, carPawn, carPawn, carPawn,
-                carTower, carHorse, carBishop, carQueen, carKing, carBishop, carHorse, carTower
+                carTowerBlack, carHorseBlack, carBishopBlack, carQueenBlack, carKingBlack, carBishopBlack, carHorseBlack, carTowerBlack,
+                carPawnBlack, carPawnBlack, carPawnBlack, carPawnBlack, carPawnBlack, carPawnBlack, carPawnBlack, carPawnBlack,
+                carPawnWhite, carPawnWhite, carPawnWhite, carPawnWhite, carPawnWhite, carPawnWhite, carPawnWhite, carPawnWhite,
+                carTowerWhite, carHorseWhite, carBishopWhite, carQueenWhite, carKingWhite, carBishopWhite, carHorseWhite, carTowerWhite
             };
         }
         private void SkinTeletubbies(out List<BitmapImage> tele)    //Fonction qui met prêt à utilisation les skins des Télétubbies
@@ -355,14 +390,14 @@ namespace Chess
 
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
-                pieces[16 + i] = new Pawn(new int[2] { 1, 0 }, "black");
+                pieces[16 + i] = new Pawn(new int[2] { 1, i }, "black");
                 memPlate[1, i] = pieces[16 + i];
             }
 
             int[] pp2 = new int[2] { 6, 0 };
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
-                pieces[24 + i] = new Pawn(new int[2] { 6, 0 }, "white");
+                pieces[24 + i] = new Pawn(new int[2] { 6, i }, "white");
                 memPlate[6, i] = pieces[24 + i];
             }
 

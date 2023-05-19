@@ -121,7 +121,7 @@ namespace Chess.Frames
         {
             if (turn == "white")    //Si c'était le tour des blancs
             {
-                if (pieces[15].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
+                if (pieces[14].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
                 {
                     check.Text = "ÉCHECS AUX NOIRS";    //Envoie de l'information
                     check.Foreground = Brushes.White;
@@ -130,14 +130,14 @@ namespace Chess.Frames
                 else
                 {
                     check.Text = "";    //Retrait de l'information
-                    check.Background = Brushes.DarkCyan;
+                    check.Background = Brushes.DarkCyan;                   
+                }
 
-                    turn = "black"; //Trait aux noirs désormais
-                }             
+                turn = "black"; //Trait aux noirs désormais
             }
             else
             {
-                if (pieces[14].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
+                if (pieces[15].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
                 {
                     check.Text = "ÉCHECS AUX BLANCS";   //Envoie de l'information
                     check.Foreground = Brushes.Black;
@@ -147,10 +147,10 @@ namespace Chess.Frames
                 else
                 {
                     check.Text = "";
-                    check.Background = Brushes.DarkCyan;
-
-                    turn = "white"; //Trait aux blancs
-                }               
+                    check.Background = Brushes.DarkCyan;                   
+                }
+                
+                turn = "white"; //Trait aux blancs
             }
         }
 
