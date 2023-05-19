@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -145,14 +145,14 @@ namespace Chess.Pieces
             {
                 _check = true;
             }
-            /*else if (IsCheckedByHorse(memPlate))
+            else if (IsCheckedByHorse(memPlate))
             {
                 _check = true;
             }
             else if(IsCheckedByPawn(memPlate))
             {
                 _check = true;
-            }*/
+            }
             else
             {
                 _check = false;
@@ -466,16 +466,17 @@ namespace Chess.Pieces
                     }
                 }
 
+                //En haut loin
                 if (_position[0] + 2 <= 7)
                 {
                     //Proche gauche
                     if (_position[1] - 1 >= 0) //Septième emplacement
                     {
-                        if (memPlate[_position[0] + 1, _position[1] - 1] != null)    //La case n'est pas vide
+                        if (memPlate[_position[0] + 2, _position[1] - 1] != null)    //La case n'est pas vide
                         {
-                            if (memPlate[_position[0] + 1, _position[1] - 1] is Horse) //La case est comblée par un cavalier
+                            if (memPlate[_position[0] + 2, _position[1] - 1] is Horse) //La case est comblée par un cavalier
                             {
-                                if (memPlate[_position[0] + 1, _position[1] - 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                                if (memPlate[_position[0] + 2, _position[1] - 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
                                 {
                                     return true; //Le roi est en échec
                                 }
@@ -486,11 +487,11 @@ namespace Chess.Pieces
                     //Proche Droite
                     if (_position[1] + 1 <= 7) //Huitème emplacement
                     {
-                        if (memPlate[_position[0] + 1, _position[1] + 1] != null)    //La case n'est pas vide
+                        if (memPlate[_position[0] + 2, _position[1] + 1] != null)    //La case n'est pas vide
                         {
-                            if (memPlate[_position[0] + 1, _position[1] + 1] is Horse) //La case est comblée par un cavalier
+                            if (memPlate[_position[0] + 2, _position[1] + 1] is Horse) //La case est comblée par un cavalier
                             {
-                                if (memPlate[_position[0] + 1, _position[1] + 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
+                                if (memPlate[_position[0] + 2, _position[1] + 1].Color != memPlate[_position[0], _position[1]].Color) //Le cavalier n'est pas de la même couleur que le roi
                                 {
                                     return true; //Le roi est en échec
                                 }
@@ -503,57 +504,70 @@ namespace Chess.Pieces
             return false;
         }
 
-        /*public bool IsCheckedByPawn(Piece[,] memPlate)
+        public bool IsCheckedByPawn(Piece[,] memPlate)
         {
             if (_color == "white")
             {
-                if (_position[0] >= 2)
+                if (_position[0] <= 5)
                 {
-                    if (memPlate[_position[0] + 1, _position[1] + 1] != null)
+                    if(_position[1] <= 6)
                     {
-                        if (memPlate[_position[0] + 1, _position[1] + 1] is Pawn)
+                        if (memPlate[_position[0] - 1, _position[1] + 1] != null)
                         {
-                            if (memPlate[_position[0] + 1, _position[1] + 1].Color == "black")
+                            if (memPlate[_position[0] - 1, _position[1] + 1] is Pawn)
                             {
-                                return true;
+                                if (memPlate[_position[0] - 1, _position[1] + 1].Color == "black")
+                                {
+                                    return true;
+                                }
                             }
                         }
                     }
-
-                    if (memPlate[_position[0] + 1, _position[1] - 1] != null)
+                    
+                    if(_position[1] >= 1)
                     {
-                        if (memPlate[_position[0] + 1, _position[1] - 1] is Pawn)
+                        if (memPlate[_position[0] - 1, _position[1] - 1] != null)
                         {
-                            if (memPlate[_position[0] + 1, _position[1] - 1].Color == "black")
+                            if (memPlate[_position[0] - 1, _position[1] - 1] is Pawn)
                             {
-                                return true;
+                                if (memPlate[_position[0] - 1, _position[1] - 1].Color == "black")
+                                {
+                                    return true;
+                                }
                             }
                         }
                     }
+                    
                 }
             }
             else
             {
-                if (_position[0] <= 5)
+                if (_position[0] >= 2)
                 {
-                    if (memPlate[_position[0] - 1, _position[1] + 1] != null)
+                    if (_position[1] <= 6)
                     {
-                        if(memPlate[_position[0] - 1, _position[1] + 1] is Pawn)
+                        if (memPlate[_position[0] + 1, _position[1] + 1] != null)
                         {
-                            if(memPlate[_position[0] - 1, _position[1]].Color == "white")
+                            if (memPlate[_position[0] + 1, _position[1] + 1] is Pawn)
                             {
-                                return true;
+                                if (memPlate[_position[0] + 1, _position[1]].Color == "white")
+                                {
+                                    return true;
+                                }
                             }
                         }
                     }
 
-                    if(memPlate[_position[0] - 1, _position[1] - 1] != null)
+                    if (_position[1] >= 1)
                     {
-                        if (memPlate[_position[0] - 1, _position[1] - 1] is Pawn)
+                        if (memPlate[_position[0] + 1, _position[1] - 1] != null)
                         {
-                            if (memPlate[_position[0] - 1, _position[1] - 1].Color == "white")
+                            if (memPlate[_position[0] + 1, _position[1] - 1] is Pawn)
                             {
-                                return true;
+                                if (memPlate[_position[0] + 1, _position[1] - 1].Color == "white")
+                                {
+                                    return true;
+                                }
                             }
                         }
                     }
@@ -561,6 +575,6 @@ namespace Chess.Pieces
             }
             return false;
 
-        }*/
+        }
     }
 }

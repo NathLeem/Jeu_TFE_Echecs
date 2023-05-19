@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Chess\\Chess\\Chess.csproj": {}
+    "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj": {}
   },
   "projects": {
-    "H:\\Chess\\Chess\\Chess.csproj": {
+    "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Chess\\Chess\\Chess.csproj",
+        "projectUniqueName": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
         "projectName": "Chess",
-        "projectPath": "H:\\Chess\\Chess\\Chess.csproj",
+        "projectPath": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
         "packagesPath": "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\",
-        "outputPath": "H:\\Chess\\Chess\\obj\\",
+        "outputPath": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

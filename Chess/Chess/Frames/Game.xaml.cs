@@ -89,9 +89,9 @@ namespace Chess.Frames
                         {
                             cases[nColonne[1], nLigne[1]].Content = cases[nColonne[0], nLigne[0]].Content;  //Déplacement du pion
                             cases[nColonne[0], nLigne[0]].Content = " ";    //Suppression de son ancienne positoion
-                        }
-
-                        Check();
+                                                                            //
+                            PostCheck();
+                        }                       
                     }
                 }
                 click = 0;  //Fin du tour   
@@ -117,11 +117,11 @@ namespace Chess.Frames
             int.TryParse(nom[2], out nLigne[click]);    //Sortie de la coordonnée y      
         }
 
-        public void Check() //Fonction qui regarde si une fois le tour joué les rois sont en échecs
+        public void PostCheck() //Fonction qui regarde si une fois le tour joué les rois sont en échecs
         {
             if (turn == "white")    //Si c'était le tour des blancs
             {
-                if (pieces[14].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
+                if (pieces[15].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
                 {
                     check.Text = "ÉCHECS AUX NOIRS";    //Envoie de l'information
                     check.Foreground = Brushes.White;
@@ -131,39 +131,80 @@ namespace Chess.Frames
                 {
                     check.Text = "";    //Retrait de l'information
                     check.Background = Brushes.DarkCyan;
-                }
 
-                turn = "black"; //Trait aux noirs désormais
+                    turn = "black"; //Trait aux noirs désormais
+                }             
             }
             else
             {
-                if (pieces[15].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
+                if (pieces[14].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
                 {
                     check.Text = "ÉCHECS AUX BLANCS";   //Envoie de l'information
                     check.Foreground = Brushes.Black;
                     check.Background = Brushes.White;
+
                 }
                 else
                 {
                     check.Text = "";
                     check.Background = Brushes.DarkCyan;
-                }
 
-                turn = "white"; //Trait aux blancs
+                    turn = "white"; //Trait aux blancs
+                }               
+            }
+        }
+
+        public bool AnteCheck(Piece[,] tempMemPlate)
+        {
+            if (turn == "white")    //Si c'était le tour des blancs
+            {
+                if (pieces[15].IsChecked(tempMemPlate)) //On vérifie si il a mis en échec le roi adversaire
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (pieces[14].IsChecked(tempMemPlate)) //On vérifie si il a mis en échec le roi adversaire
+                {
+                    return true;
+                }
+                else
+                { 
+                    return false;
+                }
             }
         }
 
         public bool CheckMove() //Fonction qui vérifie si à la fin du tour d'un joueur dont le roi est en échec ce dernier ne l'est plus
         {
-            Piece[,] tempMemPlate = memPlate;
+            Piece[,] tempMemPlate = new Piece[8,8];
+
+            for (int i = 0; i < memPlate.GetLength(0); i++)
+            {
+                for (int j = 0; j < memPlate.GetLength(1); j++)
+                {
+                    tempMemPlate[i, j] = memPlate[i, j];
+                }
+            }
 
             tempMemPlate[nColonne[1], nLigne[1]] = tempMemPlate[nColonne[0], nLigne[0]];    //Déplacement du pion
             tempMemPlate[nColonne[0], nLigne[0]] = null;    //Suppression de son ancienne position
 
+            if (!AnteCheck(tempMemPlate))
+            {
+                memPlate[nColonne[1], nLigne[1]] = memPlate[nColonne[0], nLigne[0]];    //Déplacement du pion
+                memPlate[nColonne[0], nLigne[0]] = null;    //Suppression de son ancienne position
+                return true;
+            }
 
-
-            return true;
+            return false;
         }
+
         public void RefreshInfos()  //Actualise les informations de la partie
         {
             if (turn == "white") //Informe le joueur à qui est-ce de joueur

@@ -1,5 +1,5 @@
 ﻿Chess
-
+1.0.0.0
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 H:\Jeu_TFE_Echecs\Chess\Chess\App.xaml
 4-205558815
 
-141197469174
+16-1934599389
 193-1891726104
 Frames\Game.xaml;Frames\Lobby.xaml;Frames\Skins.xaml;MainWindow.xaml;
 

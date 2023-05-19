@@ -63,29 +63,29 @@ namespace Chess
         }
         public void PrepareGame(ref Grid grdPlate)   //Fonction qui va préparer
         {
-            /*List<string> pieces = new List<string>()
+            List<string> pieces = new List<string>()
             {
                 "♜","♞","♝","♛","♚","♝","♞","♜",
                 "♟","♟️","♟️","♟️","♟️","♟️","♟️","♟️",
                 "♙","♙","♙","♙","♙","♙","♙","♙",
                 "♖","♘","♗","♕","♔","♗","♘","♖"
-            };*/
-            List<BitmapImage> pieces;   //Liste des skins. NOTE : les pièces sont déjà placées dans l'ordre dans la liste comme si ils étaient déjà sur le plateau, de sorte à ce que l'on doit parcourir que le premier indice de la liste pour palcer les pièces
+            };
+            /*List<BitmapImage> pieces;   //Liste des skins. NOTE : les pièces sont déjà placées dans l'ordre dans la liste comme si ils étaient déjà sur le plateau, de sorte à ce que l'on doit parcourir que le premier indice de la liste pour palcer les pièces
 
             SkinCar(out pieces);            //Skins des véhicules
             SkinDefault(out pieces);        //Skins par défaut
             SkinTeletubbies(out pieces);    //Skins des Télétubbies
-            SkinEgypte(out pieces);         //Skins des dieux égyptiens 
+            SkinEgypte(out pieces);         //Skins des dieux égyptiens */
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
             {
                 if (button.Content == "?")  //Là où il y a des points d'interrogations, on place une pièce
                 {
-                    Image imBouton = new Image();
+                    /*Image imBouton = new Image();
                     imBouton.Source = pieces[0];
                     imBouton.Stretch = System.Windows.Media.Stretch.None;
-                    imBouton.Stretch = Stretch.Uniform;
-                    button.Content = imBouton;  //Placement de la pièce
+                    imBouton.Stretch = Stretch.Uniform;*/
+                    button.Content = pieces[0];  //Placement de la pièce
 
                     pieces.RemoveAt(0);
                 }
