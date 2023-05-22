@@ -13,10 +13,10 @@
     <Compile Update="Frames\Lobby.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Frames\Skins.xaml.cs">
+    <Compile Update="Frames\Promote.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Promotion.xaml.cs">
+    <Compile Update="Frames\Skins.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -27,13 +27,13 @@
     <Page Update="Frames\Lobby.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Frames\Promote.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Frames\Skins.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Promotion.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

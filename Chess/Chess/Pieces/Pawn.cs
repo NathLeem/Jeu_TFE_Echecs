@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess.Frames;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,7 +100,6 @@ namespace Chess.Pieces
 
                 _notMove = false;
 
-                Promote();
                 return true;
             }
             else
@@ -108,15 +108,20 @@ namespace Chess.Pieces
             }
         }
 
-        private void Promote()
+        private void Promote(Game game, Piece[,] memPlate)
         {
-            Promotion promotion = new Promotion();
-
             if (_color == "black")
             {
                 if (_position[0] == 7)
                 {
-                    promotion.Show();
+                    for (int i = 0; i < memPlate.GetLength(0); i++)
+                    {
+                        for (int j = 0; j < memPlate.GetLength(1); j++)
+                        {
+                            game.cases[i, j].IsEnabled = false;
+                        }
+                    }
+                    game.promoteChoose.Content = new Promote();
                 }
             }
         }

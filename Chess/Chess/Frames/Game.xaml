@@ -24,15 +24,9 @@
 
             <TextBlock x:Name="afficheTime" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Text=""/>
 
-            <StackPanel Grid.Column="3" >
-                <TextBlock FontSize="10">Pions prit par les noirs :</TextBlock>
-                <TextBlock x:Name="prisesNoirs"></TextBlock>
-            </StackPanel>
-
-            <StackPanel Grid.Column="4" >
-                <TextBlock FontSize="10">Pions prit par les blancs :</TextBlock>
-                <TextBlock x:Name="prisesBlanches"></TextBlock>
-            </StackPanel>
+            <Frame x:Name="promoteChoose" Grid.Column="3" Grid.ColumnSpan="2">
+                
+            </Frame>
         </Grid>
 
         <Grid.RowDefinitions>
