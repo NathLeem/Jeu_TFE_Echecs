@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "i3u7LGUCVjlLxD4CZteTXY0hZOKSsl/499mR6zXh5bqMl6a2sjtVHMs6jAmV7QZLgP2EOeh5docH9Ykdxwd/UA==",
+  "dgSpecHash": "IqVKFE0Y+65yr73KU+DUm0+13w93kZf1b6GCY9WvBcvdepP8qOMf2ZAaJnv8mR8pyo5sZcACspI14pod+/nkQA==",
   "success": true,
-  "projectFilePath": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
+  "projectFilePath": "C:\\Users\\Gabriel\\Desktop\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
-    "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
   ],
   "logs": []
 }
