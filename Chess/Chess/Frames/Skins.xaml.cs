@@ -29,7 +29,6 @@ namespace Chess.Frames
             egypt.Click += new RoutedEventHandler(SelectSkin);
             tele.Click += new RoutedEventHandler(SelectSkin);
             vehicles.Click += new RoutedEventHandler(SelectSkin);
-            teachers.Click += new RoutedEventHandler(SelectSkin);
         }
 
         public void AnnulerChoix(object sender, RoutedEventArgs e)
@@ -42,7 +41,11 @@ namespace Chess.Frames
 
         public void SelectSkin(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow mw = (MainWindow)App.Current.MainWindow;
+            mw.skin = ((Button)sender).Content.ToString();
+            mw.Width = 800;
+            mw.Height = 450;
+            mw.screen.Content = new Lobby();
         }
     }
 }

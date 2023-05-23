@@ -62,21 +62,34 @@ namespace Chess
             gameScreen.Children.Add(grdPlate);  //Ajout du plateau
         }
         public void PrepareGame(ref Grid grdPlate)   //Fonction qui va préparer
-        {
-            /*List<string> pieces = new List<string>()
-            {
-                "♜","♞","♝","♛","♚","♝","♞","♜",
-                "♟","♟️","♟️","♟️","♟️","♟️","♟️","♟️",
-                "♙","♙","♙","♙","♙","♙","♙","♙",
-                "♖","♘","♗","♕","♔","♗","♘","♖"
-            };*/
-            
+        {            
             List<BitmapImage> pieces;   //Liste des skins. NOTE : les pièces sont déjà placées dans l'ordre dans la liste comme si ils étaient déjà sur le plateau, de sorte à ce que l'on doit parcourir que le premier indice de la liste pour palcer les pièces
 
-            SkinCar(out pieces);            //Skins des véhicules
-            SkinDefault(out pieces);        //Skins par défaut
-            SkinTeletubbies(out pieces);    //Skins des Télétubbies
-            SkinEgypte(out pieces);         //Skins des dieux égyptiens 
+            MainWindow mw = (MainWindow)App.Current.MainWindow;
+            switch (mw.skin)
+            {
+
+                case "Egypt":
+                    SkinEgypte(out pieces); //Skins des dieux égyptiens
+                    break;
+
+                case "Car":
+                    SkinCar(out pieces); //Skins des véhicules
+                    break;
+
+                case "Teletubbies":
+                    SkinTeletubbies(out pieces);    //Skins des Télétubbies
+                    break;
+
+                case "Default":
+                    SkinDefault(out pieces);
+                    break;
+
+                default:
+                    SkinDefault(out pieces); //Skins par défaut
+                    break;
+
+            }
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
             {
@@ -255,83 +268,153 @@ namespace Chess
         }
         private void SkinTeletubbies(out List<BitmapImage> tele)    //Fonction qui met prêt à utilisation les skins des Télétubbies
         {
-            BitmapImage teleBishop = new BitmapImage();
-            teleBishop.BeginInit();
-            teleBishop.UriSource = new Uri("/SkinPieces/Teletubbies/Bishop.png", UriKind.Relative);
-            teleBishop.EndInit();
+            BitmapImage teleBishopWhite = new BitmapImage();
+            teleBishopWhite.BeginInit();
+            teleBishopWhite.UriSource = new Uri("/SkinPieces/Teletubbies/BishopWhite.png", UriKind.Relative);
+            teleBishopWhite.EndInit();
 
-            BitmapImage teleHorse = new BitmapImage();
-            teleHorse.BeginInit();
-            teleHorse.UriSource = new Uri("/SkinPieces/Teletubbies/Horse.png", UriKind.Relative);
-            teleHorse.EndInit();
+            BitmapImage teleBishopBlack = new BitmapImage();
+            teleBishopBlack.BeginInit();
+            teleBishopBlack.UriSource = new Uri("/SkinPieces/Teletubbies/BishopBlack.png", UriKind.Relative);
+            teleBishopBlack.EndInit();
 
-            BitmapImage teleKing = new BitmapImage();
-            teleKing.BeginInit();
-            teleKing.UriSource = new Uri("/SkinPieces/Teletubbies/King.png", UriKind.Relative);
-            teleKing.EndInit();
 
-            BitmapImage telePawn = new BitmapImage();
-            telePawn.BeginInit();
-            telePawn.UriSource = new Uri("/SkinPieces/Teletubbies/Pawn.png", UriKind.Relative);
-            telePawn.EndInit();
+            BitmapImage teleHorseWhite = new BitmapImage();
+            teleHorseWhite.BeginInit();
+            teleHorseWhite.UriSource = new Uri("/SkinPieces/Teletubbies/HorseWhite.png", UriKind.Relative);
+            teleHorseWhite.EndInit();
 
-            BitmapImage teleQueen = new BitmapImage();
-            teleQueen.BeginInit();
-            teleQueen.UriSource = new Uri("/SkinPieces/Teletubbies/Queen.png", UriKind.Relative);
-            teleQueen.EndInit();
+            BitmapImage teleHorseBlack = new BitmapImage();
+            teleHorseBlack.BeginInit();
+            teleHorseBlack.UriSource = new Uri("/SkinPieces/Teletubbies/HorseBlack.png", UriKind.Relative);
+            teleHorseBlack.EndInit();
 
-            BitmapImage teleTower = new BitmapImage();
-            teleTower.BeginInit();
-            teleTower.UriSource = new Uri("/SkinPieces/Teletubbies/Tower.png", UriKind.Relative);
-            teleTower.EndInit();
+
+            BitmapImage teleKingWhite = new BitmapImage();
+            teleKingWhite.BeginInit();
+            teleKingWhite.UriSource = new Uri("/SkinPieces/Teletubbies/KingWhite.png", UriKind.Relative);
+            teleKingWhite.EndInit();
+
+            BitmapImage teleKingBlack = new BitmapImage();
+            teleKingBlack.BeginInit();
+            teleKingBlack.UriSource = new Uri("/SkinPieces/Teletubbies/KingBlack.png", UriKind.Relative);
+            teleKingBlack.EndInit();
+
+
+            BitmapImage telePawnWhite = new BitmapImage();
+            telePawnWhite.BeginInit();
+            telePawnWhite.UriSource = new Uri("/SkinPieces/Teletubbies/PawnWhite.png", UriKind.Relative);
+            telePawnWhite.EndInit();
+
+            BitmapImage telePawnBlack = new BitmapImage();
+            telePawnBlack.BeginInit();
+            telePawnBlack.UriSource = new Uri("/SkinPieces/Teletubbies/PawnBlack.png", UriKind.Relative);
+            telePawnBlack.EndInit();
+
+
+            BitmapImage teleQueenWhite = new BitmapImage();
+            teleQueenWhite.BeginInit();
+            teleQueenWhite.UriSource = new Uri("/SkinPieces/Teletubbies/QueenWhite.png", UriKind.Relative);
+            teleQueenWhite.EndInit();
+
+            BitmapImage teleQueenBlack = new BitmapImage();
+            teleQueenBlack.BeginInit();
+            teleQueenBlack.UriSource = new Uri("/SkinPieces/Teletubbies/QueenBlack.png", UriKind.Relative);
+            teleQueenBlack.EndInit();
+
+
+            BitmapImage teleTowerWhite = new BitmapImage();
+            teleTowerWhite.BeginInit();
+            teleTowerWhite.UriSource = new Uri("/SkinPieces/Teletubbies/TowerWhite.png", UriKind.Relative);
+            teleTowerWhite.EndInit();
+
+            BitmapImage teleTowerBlack = new BitmapImage();
+            teleTowerBlack.BeginInit();
+            teleTowerBlack.UriSource = new Uri("/SkinPieces/Teletubbies/TowerBlack.png", UriKind.Relative);
+            teleTowerBlack.EndInit();
 
             tele = new List<BitmapImage>()
             {
-                teleTower, teleHorse, teleBishop, teleQueen, teleKing, teleBishop, teleHorse, teleTower,
-                telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn,
-                telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn, telePawn,
-                teleTower, teleHorse, teleBishop, teleQueen, teleKing, teleBishop, teleHorse, teleTower
+                teleTowerBlack, teleHorseBlack, teleBishopBlack, teleQueenBlack, teleKingBlack, teleBishopBlack, teleHorseBlack, teleTowerBlack,
+                telePawnBlack, telePawnBlack, telePawnBlack, telePawnBlack, telePawnBlack, telePawnBlack, telePawnBlack, telePawnBlack,
+                telePawnWhite, telePawnWhite, telePawnWhite, telePawnWhite, telePawnWhite, telePawnWhite, telePawnWhite, telePawnWhite,
+                teleTowerWhite, teleHorseWhite, teleBishopWhite, teleQueenWhite, teleKingWhite, teleBishopWhite, teleHorseWhite, teleTowerWhite
             };
         }
 
         private void SkinDefault(out List<BitmapImage> skindef)      //Fonction qui met prêt à utilisation les skins par défaut 
         {
-            BitmapImage defaultBishop = new BitmapImage();
-            defaultBishop.BeginInit();
-            defaultBishop.UriSource = new Uri("/SkinPieces/Default/Bishop.png", UriKind.Relative);
-            defaultBishop.EndInit();
+            BitmapImage defaultBishopWhite = new BitmapImage();
+            defaultBishopWhite.BeginInit();
+            defaultBishopWhite.UriSource = new Uri("/SkinPieces/Default/BishopWhite.png", UriKind.Relative);
+            defaultBishopWhite.EndInit();
 
-            BitmapImage defaultHorse = new BitmapImage();
-            defaultHorse.BeginInit();
-            defaultHorse.UriSource = new Uri("/SkinPieces/Default/Horse.png", UriKind.Relative);
-            defaultHorse.EndInit();
+            BitmapImage defaultBishopBlack = new BitmapImage();
+            defaultBishopBlack.BeginInit();
+            defaultBishopBlack.UriSource = new Uri("/SkinPieces/Default/BishopBlack.png", UriKind.Relative);
+            defaultBishopBlack.EndInit();
 
-            BitmapImage defaultKing = new BitmapImage();
-            defaultKing.BeginInit();
-            defaultKing.UriSource = new Uri("/SkinPieces/Default/King.png", UriKind.Relative);
-            defaultKing.EndInit();
 
-            BitmapImage defaultPawn = new BitmapImage();
-            defaultPawn.BeginInit();
-            defaultPawn.UriSource = new Uri("/SkinPieces/Default/Pawn.png", UriKind.Relative);
-            defaultPawn.EndInit();
+            BitmapImage defaultHorseWhite = new BitmapImage();
+            defaultHorseWhite.BeginInit();
+            defaultHorseWhite.UriSource = new Uri("/SkinPieces/Default/HorseWhite.png", UriKind.Relative);
+            defaultHorseWhite.EndInit();
 
-            BitmapImage defaultQueen = new BitmapImage();
-            defaultQueen.BeginInit();
-            defaultQueen.UriSource = new Uri("/SkinPieces/Default/Queen.png", UriKind.Relative);
-            defaultQueen.EndInit();
+            BitmapImage defaultHorseBlack = new BitmapImage();
+            defaultHorseBlack.BeginInit();
+            defaultHorseBlack.UriSource = new Uri("/SkinPieces/Default/HorseBlack.png", UriKind.Relative);
+            defaultHorseBlack.EndInit();
 
-            BitmapImage defaultTower = new BitmapImage();
-            defaultTower.BeginInit();
-            defaultTower.UriSource = new Uri("/SkinPieces/Default/Tower.png", UriKind.Relative);
-            defaultTower.EndInit();
+
+            BitmapImage defaultKingWhite = new BitmapImage();
+            defaultKingWhite.BeginInit();
+            defaultKingWhite.UriSource = new Uri("/SkinPieces/Default/KingWhite.png", UriKind.Relative);
+            defaultKingWhite.EndInit();
+
+            BitmapImage defaultKingBlack = new BitmapImage();
+            defaultKingBlack.BeginInit();
+            defaultKingBlack.UriSource = new Uri("/SkinPieces/Default/KingBlack.png", UriKind.Relative);
+            defaultKingBlack.EndInit();
+
+
+            BitmapImage defaultPawnWhite = new BitmapImage();
+            defaultPawnWhite.BeginInit();
+            defaultPawnWhite.UriSource = new Uri("/SkinPieces/Default/PawnWhite.png", UriKind.Relative);
+            defaultPawnWhite.EndInit();
+
+            BitmapImage defaultPawnBlack = new BitmapImage();
+            defaultPawnBlack.BeginInit();
+            defaultPawnBlack.UriSource = new Uri("/SkinPieces/Default/PawnBlack.png", UriKind.Relative);
+            defaultPawnBlack.EndInit();
+
+
+            BitmapImage defaultQueenWhite = new BitmapImage();
+            defaultQueenWhite.BeginInit();
+            defaultQueenWhite.UriSource = new Uri("/SkinPieces/Default/QueenWhite.png", UriKind.Relative);
+            defaultQueenWhite.EndInit();
+
+            BitmapImage defaultQueenBlack = new BitmapImage();
+            defaultQueenBlack.BeginInit();
+            defaultQueenBlack.UriSource = new Uri("/SkinPieces/Default/QueenBlack.png", UriKind.Relative);
+            defaultQueenBlack.EndInit();
+
+
+            BitmapImage defaultTowerWhite = new BitmapImage();
+            defaultTowerWhite.BeginInit();
+            defaultTowerWhite.UriSource = new Uri("/SkinPieces/Default/TowerWhite.png", UriKind.Relative);
+            defaultTowerWhite.EndInit();
+
+            BitmapImage defaultTowerBlack = new BitmapImage();
+            defaultTowerBlack.BeginInit();
+            defaultTowerBlack.UriSource = new Uri("/SkinPieces/Default/TowerBlack.png", UriKind.Relative);
+            defaultTowerBlack.EndInit();
 
             skindef = new List<BitmapImage>()
             {
-                defaultTower, defaultHorse, defaultBishop, defaultQueen, defaultKing, defaultBishop, defaultHorse, defaultTower,
-                defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn,
-                defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn, defaultPawn,
-                defaultTower, defaultHorse, defaultBishop, defaultQueen, defaultKing, defaultBishop, defaultHorse, defaultTower
+                defaultTowerBlack, defaultHorseBlack, defaultBishopBlack, defaultQueenBlack, defaultKingBlack, defaultBishopBlack, defaultHorseBlack, defaultTowerBlack,
+                defaultPawnBlack, defaultPawnBlack, defaultPawnBlack, defaultPawnBlack, defaultPawnBlack, defaultPawnBlack, defaultPawnBlack, defaultPawnBlack,
+                defaultPawnWhite, defaultPawnWhite, defaultPawnWhite, defaultPawnWhite, defaultPawnWhite, defaultPawnWhite, defaultPawnWhite, defaultPawnWhite,
+                defaultTowerWhite, defaultHorseWhite, defaultBishopWhite, defaultQueenWhite, defaultKingWhite, defaultBishopWhite, defaultHorseWhite, defaultTowerWhite
             };
         }
         public void SetUpMem(ref Piece[] pieces, ref Piece[,] memPlate)  //Fonction qui va placer les pièces artificielles/logiques dans le plateau mémoire et donner toutes leurs propriétés respectives
@@ -388,13 +471,13 @@ namespace Chess
             pieces[15] = new King(new int[2] { 7, 4 }, "white");
             memPlate[7, 4] = pieces[15];
 
+
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
                 pieces[16 + i] = new Pawn(new int[2] { 1, i }, "black");
                 memPlate[1, i] = pieces[16 + i];
             }
 
-            int[] pp2 = new int[2] { 6, 0 };
             for (int i = 0; i < memPlate.GetLength(0); i++)
             {
                 pieces[24 + i] = new Pawn(new int[2] { 6, i }, "white");

@@ -24,6 +24,10 @@ namespace Chess.Pieces
             return true;    //Code brouillon, facultatif
         }
 
+        public virtual void Promotion(string choose, ref Piece[,] memPlate)
+        {
+
+        }
         public string Color //Renvoie la couleur
         {
             get { return _color; }

@@ -108,21 +108,26 @@ namespace Chess.Pieces
             }
         }
 
-        private void Promote(Game game, Piece[,] memPlate)
+        public override void Promotion(string choose, ref Piece[,] memPlate)
         {
-            if (_color == "black")
+            memPlate[_position[0], _position[1]] = null;
+            switch (choose)
             {
-                if (_position[0] == 7)
-                {
-                    for (int i = 0; i < memPlate.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < memPlate.GetLength(1); j++)
-                        {
-                            game.cases[i, j].IsEnabled = false;
-                        }
-                    }
-                    game.promoteChoose.Content = new Promote();
-                }
+                case "Queen":                    
+                    memPlate[_position[0], _position[1]] = new Queen(new int[2] { _position[0], _position[1] }, _color);
+                    break;
+
+                case "Bishop":
+                    memPlate[_position[0], _position[1]] = new Bishop(new int[2] { _position[0], _position[1] }, _color);
+                    break;
+
+                case "Horse":
+                    memPlate[_position[0], _position[1]] = new Horse(new int[2] { _position[0], _position[1] }, _color);
+                    break;
+
+                case "Tower":
+                    memPlate[_position[0], _position[1]] = new Tower(new int[2] { _position[0], _position[1] }, _color);
+                    break;
             }
         }
     }

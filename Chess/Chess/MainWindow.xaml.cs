@@ -22,10 +22,17 @@ namespace Chess
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        public string turn = "white";      //Tour par tour (Les blancs commencent)
+        public string skin;
+        public int[] pawnPosition = new int[2];     //Variable qui sert à conserver la position d'un pion qui est en stade de promotion pour pouvoir le faire passer de fichier en fichier
+        public Piece[,] memPlate = new Piece[8, 8]; //Plateau "logique" du jeu, toutes les opérations se feront ici
+        public Piece[] pieces = new Piece[32];      //Liste des pièces du jeu
+        public Button[,] cases = new Button[8, 8];  //Cases du plateau (en 8x8) tous intéragissables   
+        SetUpGame start = new SetUpGame();      //Structure qui lance le jeu
         public MainWindow()
         {
             InitializeComponent();
+            start.SetUpMem(ref pieces, ref memPlate);
             screen.Content = new Lobby();
         }
     }

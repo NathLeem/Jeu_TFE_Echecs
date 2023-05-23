@@ -23,13 +23,11 @@
         </Grid.RowDefinitions>
 
         <TextBlock Foreground="AliceBlue" Width="200" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontSize="40" Text="Skin"/>
-        <Button x:Name="exit" Foreground="LightGray" Height="50" Width="50" FontSize="13" Background="Red" Grid.Column="1" Grid.Row="2">Annuler</Button>
+        <Button x:Name="exit" Foreground="LightGray" Height="50" Width="60" FontSize="13" Background="Red" Margin="0,0,30,30">Cancel</Button>
 
-        <Button Background="Black" Foreground="LightGray" Height="50" Width="50" Content="Default" x:Name="classic" Grid.Column ="0" Grid.Row="1"></Button>
-        <Button Background="Black" Foreground="LightGray" Height="50" Width="50" Content="Egypt" x:Name="egypt" Grid.Column ="1" Grid.Row="1"></Button>
-        <Button Background="Black" Foreground="LightGray" Height="50" Width="70" Content="Teletubbies" x:Name="tele" Grid.Column ="2" Grid.Row="1"></Button>
-
-        <Button Background="Black" Foreground="LightGray" Height="50" Width="50" Content="Car" x:Name="vehicles" Grid.Column ="0" Grid.Row="2"></Button>
-        <Button Background="Black" Foreground="LightGray" Height="50" Width="50" Content="Teacher" x:Name="teachers" Grid.Column ="2" Grid.Row="2"></Button>
+        <Button Background="Black" Foreground="LightGray" Height="60" Width="70" Content="Default" x:Name="classic" Grid.Column ="0" Grid.Row="1"></Button>
+        <Button Background="Black" Foreground="LightGray" Height="60" Width="70" Content="Egypt" x:Name="egypt" Grid.Column ="2" Grid.Row="2"></Button>
+        <Button Background="Black" Foreground="LightGray" Height="60" Width="70" Content="Teletubbies" x:Name="tele" Grid.Column ="2" Grid.Row="1"></Button>
+        <Button Background="Black" Foreground="LightGray" Height="60" Width="70" Content="Car" x:Name="vehicles" Grid.Column ="0" Grid.Row="2"></Button>
     </Grid>
 </Page>

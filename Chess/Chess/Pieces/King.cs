@@ -508,7 +508,7 @@ namespace Chess.Pieces
         {
             if (_color == "white")
             {
-                if (_position[0] <= 5)
+                if (_position[0] <= 2)
                 {
                     if(_position[1] <= 6)
                     {
@@ -542,7 +542,7 @@ namespace Chess.Pieces
             }
             else
             {
-                if (_position[0] >= 2)
+                if (_position[0] <= 5)
                 {
                     if (_position[1] <= 6)
                     {
@@ -550,7 +550,7 @@ namespace Chess.Pieces
                         {
                             if (memPlate[_position[0] + 1, _position[1] + 1] is Pawn)
                             {
-                                if (memPlate[_position[0] + 1, _position[1]].Color == "white")
+                                if (memPlate[_position[0] + 1, _position[1] + 1].Color == "white")
                                 {
                                     return true;
                                 }
