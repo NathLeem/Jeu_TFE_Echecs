@@ -234,5 +234,10 @@ namespace Chess.Frames
             }
             return false;
         }
+
+        public bool Checkmate()
+        {
+
+        }
     }
 }

@@ -64,6 +64,7 @@ namespace Chess.Frames
             }
 
             mw.PostCheck();
+
         }
 
         private void ChangeToQueen()
