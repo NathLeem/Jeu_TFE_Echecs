@@ -8,7 +8,6 @@ namespace Chess.Pieces
 {
     class Tower : Piece
     {
-        private bool _roc;
         public Tower(int[] position, string color) : base(position, color)
         {
             _roc = true;

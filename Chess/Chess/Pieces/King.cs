@@ -10,18 +10,19 @@ namespace Chess.Pieces
     {
         private bool _check;
         private bool _checkMate;
-        private bool _roc;
+        private int _rocMove;
 
         public King(int[] position, string color) : base(position, color)
         {
             _check = false;
             _checkMate = false;
             _roc = true;
+            _rocMove = 0;
         }
 
         public override bool Moving(int[] nColonne, int[] nLigne, Piece[,] memPlate)
         {
-            if (BasicMove(nColonne, nLigne, memPlate))
+            if (BasicMove(nColonne, nLigne, memPlate) || Roc(nColonne, nLigne, memPlate))
             {
                 _position[0] = nColonne[1];
                 _position[1] = nLigne[1];
@@ -62,36 +63,40 @@ namespace Chess.Pieces
         {
             if (_roc)
             {
-                if (_color == "white")
+                if(_color == "white")
                 {
                     if (nColonne[1] == 7 && nLigne[1] == 0)
                     {
-                        bool noObstacle = true;
-                        for (int i = _position[1]; i > nLigne[1] + 1; i--)
+                        if (memPlate[7,0] is Tower)
                         {
-                            if (memPlate[nColonne[1], i] != null)
+                            if (memPlate[7, 0].Roc)
                             {
-                                noObstacle = false;
+                                if (memPlate[0, 7].Color == _color)
+                                {
+                                    if (memPlate[7, 1] is null && memPlate[7, 2] is null && memPlate[7, 3] is null)
+                                    {
+                                        _rocMove = 1;
+                                        return true;
+                                    }
+                                }                               
                             }
-                        }
-                        if (noObstacle)
-                        {
-                            return true;
                         }
                     }
                     else if (nColonne[1] == 7 && nLigne[1] == 7)
                     {
-                        bool noObstacle = true;
-                        for (int i = _position[1]; i < nLigne[1] - 1; i++)
+                        if (memPlate[7, 7] is Tower)
                         {
-                            if (memPlate[nColonne[1], i] != null)
+                            if (memPlate[7, 7].Roc)
                             {
-                                noObstacle = false;
+                                if (memPlate[0, 7].Color == _color)
+                                {
+                                    if (memPlate[7, 5] is null && memPlate[7, 6] is null)
+                                    {
+                                        _rocMove = 2;
+                                        return true;
+                                    }
+                                }                               
                             }
-                        }
-                        if (noObstacle)
-                        {
-                            return true;
                         }
                     }
                 }
@@ -99,35 +104,39 @@ namespace Chess.Pieces
                 {
                     if (nColonne[1] == 0 && nLigne[1] == 0)
                     {
-                        bool noObstacle = true;
-                        for (int i = _position[1]; i > nLigne[1]; i--)
+                        if (memPlate[0, 0] is Tower)
                         {
-                            if (memPlate[nColonne[1], i] != null)
+                            if (memPlate[0, 0].Roc)
                             {
-                                noObstacle = false;
+                                if (memPlate[0, 7].Color == _color)
+                                {
+                                    if (memPlate[0, 1] is null && memPlate[0, 2] is null && memPlate[0, 3] is null)
+                                    {
+                                        _rocMove = 3;
+                                        return true;
+                                    }
+                                }                               
                             }
-                        }
-                        if (noObstacle)
-                        {
-                            return true;
                         }
                     }
                     else if (nColonne[1] == 0 && nLigne[1] == 7)
                     {
-                        bool noObstacle = true;
-                        for (int i = _position[1]; i < nLigne[1]; i++)
+                        if (memPlate[0, 7] is Tower)
                         {
-                            if (memPlate[nColonne[1], i] != null)
+                            
+                            if (memPlate[0, 7].Roc)
                             {
-                                noObstacle = false;
+                                if (memPlate[0, 7].Color == _color)
+                                {
+                                    if (memPlate[0, 5] is null && memPlate[0, 6] is null)
+                                    {
+                                        _rocMove = 4;
+                                        return true;
+                                    }
+                                }                               
                             }
                         }
-                        if (noObstacle)
-                        {
-                            return true;
-                        }
                     }
-
                 }
             }
 
@@ -576,5 +585,11 @@ namespace Chess.Pieces
             return false;
 
         }
+
+        public int RocMove
+        {
+            get { return _rocMove; }
+        }
+
     }
 }

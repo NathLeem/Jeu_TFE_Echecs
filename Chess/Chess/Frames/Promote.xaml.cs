@@ -62,6 +62,8 @@ namespace Chess.Frames
                     mw.cases[i, j].IsEnabled = true;
                 }
             }
+
+            mw.PostCheck();
         }
 
         private void ChangeToQueen()

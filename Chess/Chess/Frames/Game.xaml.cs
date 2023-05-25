@@ -86,9 +86,8 @@ namespace Chess.Frames
                             mainWindow.cases[nColonne[0], nLigne[0]].Content = " ";    //Suppression de son ancienne positoion
 
                             if (!VerifPromote())
-                            {
-                               
-                                PostCheck();
+                            {                              
+                                check.Text = mainWindow.PostCheck();
                             }
                             else
                             {
@@ -120,42 +119,7 @@ namespace Chess.Frames
             int.TryParse(nom[2], out nLigne[click]);    //Sortie de la coordonnée y      
         }
 
-        public void PostCheck() //Fonction qui regarde si une fois le tour joué les rois sont en échecs
-        {
-            if (mainWindow.turn == "white")    //Si c'était le tour des blancs
-            {
-                if (mainWindow.pieces[14].IsChecked(mainWindow.memPlate)) //On vérifie si il a mis en échec le roi adversaire
-                {
-                    check.Text = "CHECK TO BLACK";    //Envoie de l'information
-                    check.Foreground = Brushes.White;
-                    check.Background = Brushes.Black;
-                }
-                else
-                {
-                    check.Text = "";    //Retrait de l'information
-                    check.Background = Brushes.DarkCyan;                   
-                }
-
-                mainWindow.turn = "black"; //Trait aux noirs désormais
-            }
-            else
-            {
-                if (mainWindow.pieces[15].IsChecked(mainWindow.memPlate)) //On vérifie si il a mis en échec le roi adversaire
-                {
-                    check.Text = "CHECK TO WHITE";   //Envoie de l'information
-                    check.Foreground = Brushes.Black;
-                    check.Background = Brushes.White;
-
-                }
-                else
-                {
-                    check.Text = "";    //Retrait de l'information
-                    check.Background = Brushes.DarkCyan;                   
-                }
-
-                mainWindow.turn = "white"; //Trait aux blancs
-            }
-        }
+        
 
         public bool AnteCheck(Piece[,] tempMemPlate)
         {
@@ -222,6 +186,11 @@ namespace Chess.Frames
                 tour.Text = "Black turn";
                 tour.Foreground = Brushes.White;
             }
+        }
+
+        public void TypeOfMove()
+        {
+            
         }
 
         public bool VerifPromote()

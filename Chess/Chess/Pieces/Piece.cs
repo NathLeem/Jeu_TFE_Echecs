@@ -10,6 +10,7 @@ namespace Chess.Pieces
     {
         protected int[] _position;      //Enregistre la position de la pièce
         protected string _color;        //Détermine sa couleur
+        protected bool _roc;
 
         public Piece(int[] position, string color)  //Constructeur des pièces
         {
@@ -31,6 +32,11 @@ namespace Chess.Pieces
         public string Color //Renvoie la couleur
         {
             get { return _color; }
+        }
+
+        public bool Roc //Getter de _roc
+        {
+            get { return _roc; }
         }
     }
 }
