@@ -45,6 +45,8 @@ namespace Chess.Frames
             start.SetUpPlate(ref grdPlate, ref mainWindow.cases, ref this.gameScreen);
             start.PrepareGame(ref grdPlate);
 
+            mainWindow.infRow.Height = new GridLength(800/9);
+
             for (int i = 0; i < mainWindow.cases.GetLength(0); i++)
             {
                 for (int j = 0; j < mainWindow.cases.GetLength(1); j++)
@@ -87,7 +89,7 @@ namespace Chess.Frames
 
                             if (!VerifPromote())
                             {                              
-                                check.Text = mainWindow.PostCheck();
+                                mainWindow.PostCheck();
                             }
                             else
                             {
@@ -176,15 +178,15 @@ namespace Chess.Frames
         {
             if (mainWindow.turn == "white") //Informe le joueur à qui est-ce de joueur
             {
-                tour.Background = Brushes.White;
-                tour.Text = "White turn";
-                tour.Foreground = Brushes.Black;
+                mainWindow.tour.Background = Brushes.White;
+                mainWindow.tour.Text = "White turn";
+                mainWindow.tour.Foreground = Brushes.Black;
             }
             else    //Trait aux noirs
             {
-                tour.Background = Brushes.Black;
-                tour.Text = "Black turn";
-                tour.Foreground = Brushes.White;
+                mainWindow.tour.Background = Brushes.Black;
+                mainWindow.tour.Text = "Black turn";
+                mainWindow.tour.Foreground = Brushes.White;
             }
         }
 
@@ -228,7 +230,7 @@ namespace Chess.Frames
                     }
                 }
 
-                promoteChoose.Content = new Promote();
+                mainWindow.promoteChoose.Content = new Promote();
 
                 return true;
             }
@@ -237,7 +239,7 @@ namespace Chess.Frames
 
         public bool Checkmate()
         {
-
+            return false;
         }
     }
 }

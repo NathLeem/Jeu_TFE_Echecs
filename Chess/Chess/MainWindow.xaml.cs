@@ -35,18 +35,21 @@ namespace Chess
             start.SetUpMem(ref pieces, ref memPlate);
             screen.Content = new Lobby();
         }
-        public string PostCheck() //Fonction qui regarde si une fois le tour joué les rois sont en échecs
+        public void PostCheck() //Fonction qui regarde si une fois le tour joué les rois sont en échecs
         {
             if (turn == "white")    //Si c'était le tour des blancs
             {
                 turn = "black"; //Trait aux noirs désormais
                 if (pieces[14].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
                 {
-                    return "CHECK TO BLACK";    //Envoie de l'information
+                    check.Text = "CHECK TO BLACK";    //Envoie de l'information
+                    check.Foreground = Brushes.White;
+                    check.Background = Brushes.Black;
                 }
                 else
                 {
-                    return "";    //Retrait de l'information
+                    check.Text = "";    //Retrait de l'information
+                    check.Background = Brushes.DarkCyan;
                 }
             }
             else
@@ -54,11 +57,14 @@ namespace Chess
                 turn = "white"; //Trait aux blancs
                 if (pieces[15].IsChecked(memPlate)) //On vérifie si il a mis en échec le roi adversaire
                 {
-                    return "CHECK TO WHITE";   //Envoie de l'information
+                    check.Text = "CHECK TO WHITE";   //Envoie de l'information
+                    check.Foreground = Brushes.Black;
+                    check.Background = Brushes.White;
                 }
                 else
                 {
-                    return "";    //Retrait de l'information
+                    check.Text = "";    //Retrait de l'information
+                    check.Background = Brushes.DarkCyan;
                 }
             }
         }

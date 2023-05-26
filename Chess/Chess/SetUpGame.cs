@@ -58,7 +58,7 @@ namespace Chess
                     grdPlate.Children.Add(cases[i, j]);   //Ajout de la case
                 }
             }
-            Grid.SetRow(grdPlate, 1);    //Le plateau d'échec se met dans la deuxième ligne de la fenêtre
+            Grid.SetRow(grdPlate, 0);    //Le plateau d'échec se met dans la deuxième ligne de la fenêtre
             gameScreen.Children.Add(grdPlate);  //Ajout du plateau
         }
         public void PrepareGame(ref Grid grdPlate)   //Fonction qui va préparer

@@ -19,9 +19,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,50,0,0" FontSize="60" FontFamily="Arial" Foreground="Gray">Jeu d'échecs</TextBlock>
-        <Button x:Name="rules" Height="75" Width="150" Margin="0,0,150,50" FontSize="22" FontFamily="Arial" BorderThickness="5" BorderBrush="#312e2b" Foreground="WhiteSmoke" Background="#07bc0c">Règles du jeu</Button>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="play" Height="150" Width="250" Margin="0,0,0,0" FontSize="50" FontFamily="Arial" BorderThickness="8" BorderBrush="#312e2b" Foreground="WhiteSmoke" Background="#07bc0c">Jouer</Button>
+        <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,50,0,0" FontSize="60" FontFamily="Arial" Foreground="Gray">Chess</TextBlock>
+        <Button x:Name="rules" Height="75" Width="150" Margin="0,0,150,50" FontSize="22" FontFamily="Arial" BorderThickness="5" BorderBrush="#312e2b" Foreground="WhiteSmoke" Background="#07bc0c">Rules</Button>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="play" Height="150" Width="250" Margin="0,0,0,0" FontSize="50" FontFamily="Arial" BorderThickness="8" BorderBrush="#312e2b" Foreground="WhiteSmoke" Background="#07bc0c">Play</Button>
         <Button Grid.Row="1" x:Name="skin" Height="75" Width="150" Margin="0,50,150,0" FontSize="40" FontFamily="Arial" BorderThickness="8" BorderBrush="#312e2b" Foreground="WhiteSmoke" Background="#07bc0c">Skins</Button>
     </Grid>
 </Page>
