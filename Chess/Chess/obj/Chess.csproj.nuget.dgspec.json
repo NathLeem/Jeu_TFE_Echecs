@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj": {}
+    "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj": {}
   },
   "projects": {
-    "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj": {
+    "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
+        "projectUniqueName": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
         "projectName": "Chess",
-        "projectPath": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
-        "packagesPath": "C:\\Users\\200198.asty-moulin\\.nuget\\packages\\",
-        "outputPath": "H:\\Jeu_TFE_Echecs\\Chess\\Chess\\obj\\",
+        "projectPath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Chess\\Chess\\Chess.csproj",
+        "packagesPath": "C:\\Users\\200253.asty-moulin\\.nuget\\packages\\",
+        "outputPath": "H:\\6TI\\Multi\\Jeu_TFE_Echecs\\Chess\\Chess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\200198.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\200253.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     }
