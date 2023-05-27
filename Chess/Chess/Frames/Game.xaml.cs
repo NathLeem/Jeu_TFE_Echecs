@@ -33,12 +33,7 @@ namespace Chess.Frames
 
         MainWindow mainWindow = (MainWindow)App.Current.MainWindow;
         
-        SetUpGame start = new SetUpGame(); 
-        /*DispatcherTimer timerWhite = new DispatcherTimer();
-        DispatcherTimer timerBlack = new DispatcherTimer();
-
-        int timeWhite = 0;
-        int timeBlack = 0;*/
+        SetUpGame start = new SetUpGame();
         public Game()
         {
             InitializeComponent();

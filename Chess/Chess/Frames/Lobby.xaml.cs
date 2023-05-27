@@ -41,6 +41,9 @@ namespace Chess.Frames
             MainWindow mw = (MainWindow)App.Current.MainWindow;
             mw.screen.Content = new Game();
             play.IsEnabled = false; //Empêche le joueur de lancer plusieurs parties en même temps
+            mw.tour.Visibility = Visibility.Visible;
+            mw.afficheTimeBlack.Visibility = Visibility.Visible;
+            mw.afficheTimeWhite.Visibility = Visibility.Visible;
         }
 
         public void MontrerLesRegles(object sender, RoutedEventArgs e)

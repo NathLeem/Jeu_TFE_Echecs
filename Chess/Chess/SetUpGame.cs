@@ -68,7 +68,6 @@ namespace Chess
             MainWindow mw = (MainWindow)App.Current.MainWindow;
             switch (mw.skin)
             {
-
                 case "Egypt":
                     SkinEgypte(out pieces); //Skins des dieux égyptiens
                     break;
@@ -88,7 +87,6 @@ namespace Chess
                 default:
                     SkinDefault(out pieces); //Skins par défaut
                     break;
-
             }
 
             foreach (Button button in grdPlate.Children.OfType<Button>())
@@ -109,10 +107,6 @@ namespace Chess
                 }
 
             }
-
-            /*timerWhite.Tick += new EventHandler(Timer_Tick);
-            timerWhite.Interval = (TimeSpan)1000;
-            timerWhite.Start();*/
         }
 
         private void SkinEgypte(out List<BitmapImage> egypte)   //Fonction qui met prêt à utilisation les skins des dieux Egyptiens

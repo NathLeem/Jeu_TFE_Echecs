@@ -37,6 +37,9 @@ namespace Chess
             InitializeComponent();
             start.SetUpMem(ref pieces, ref memPlate);
             screen.Content = new Lobby();
+            tour.Visibility = Visibility.Hidden;
+            afficheTimeBlack.Visibility = Visibility.Hidden;
+            afficheTimeWhite.Visibility = Visibility.Hidden;
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
