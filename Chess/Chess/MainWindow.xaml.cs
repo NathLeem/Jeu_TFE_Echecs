@@ -30,7 +30,7 @@ namespace Chess
         public Piece[] pieces = new Piece[32];      //Liste des pièces du jeu
         public Button[,] cases = new Button[8, 8];  //Cases du plateau (en 8x8) tous intéragissables   
         SetUpGame start = new SetUpGame();      //Structure qui lance le jeu
-        int timerStart = 100;
+        int timerStart = 1000;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,14 +38,14 @@ namespace Chess
             screen.Content = new Lobby();
 
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(.1);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
 
             void timer_Tick(object sender, EventArgs e)
             {
                 timerStart--;
-                afficheTime.Content = timerStart.ToString("0:0:0");
+                afficheTime.Content = timerStart.ToString("00:60");
             }
         }
         public void PostCheck() //Fonction qui regarde si une fois le tour joué les rois sont en échecs
