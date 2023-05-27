@@ -25,7 +25,8 @@
 
             <TextBlock x:Name="check" Grid.Column="1" HorizontalAlignment="Center" Padding="0, 10, 0, 0" VerticalAlignment="Center" Background="White" Foreground="Black" FontWeight="Bold" Height="40"></TextBlock>
 
-            <Label x:Name="afficheTime" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" Background="White"/>
+            <Label x:Name="afficheTimeWhite" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Background="White"/>
+            <Label x:Name="afficheTimeBlack" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Black" Background="White"/>
 
             <Frame x:Name="promoteChoose" Grid.Column="3" Grid.ColumnSpan="2">
 
