@@ -41,7 +41,6 @@ namespace Chess
                         {
                             cases[i, j].Background = Brushes.Green;
                         }
-
                     }
                     else
                     {

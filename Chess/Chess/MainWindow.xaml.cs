@@ -43,10 +43,10 @@ namespace Chess
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_TickWhite;
+            timer.Tick += timer_Tick;
             timer.Start();
 
-            void timer_TickWhite(object sender, EventArgs e)
+            void timer_Tick(object sender, EventArgs e)
             {
                 if (turn == "white")
                 {
@@ -57,6 +57,11 @@ namespace Chess
                 {
                     afficheTimeBlack.Content = timerStartBlack.ToString("00:00");
                     timerStartBlack--;
+                }
+                if (timerStartBlack == -1 || timerStartWhite == -1)
+                {
+                    timer.Stop();
+                    
                 }
             }
         }
